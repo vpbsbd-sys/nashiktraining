@@ -8,26 +8,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Teko:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#FFFFFF;
-    --paper-dark:#EAF3FB;
-    --ink:#132B3D;
-    --navy:#0B3D66;
-    --blue:#2E75B6;
-    --blue-dark:#164A73;
-    --blue-light:#5FA8DE;
-    --line: rgba(11,61,102,0.14);
-    --maroon:#B23A3A;
-    --olive:#2E8B57;
-    --olive-dark:#1F6B41;
-    --shadow: 0 10px 30px rgba(11,61,102,0.14);
+    --paper:#F4F8FC;
+    --paper-dark:#FFFFFF;
+    --ink:#0E2A44;
+    --navy:#0B3C6B;
+    --khaki:#3F7FBF;
+    --khaki-dark:#0B3C6B;
+    --brass:#1E63A8;
+    --maroon:#B0392E;
+    --olive:#3F7FBF;
+    --olive-dark:#0B3C6B;
+    --gold:#0B3C6B;
+    --paper-line: rgba(11,60,107,0.16);
+    --shadow: 0 10px 30px rgba(11,60,107,0.14);
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background: radial-gradient(ellipse at top left, rgba(46,117,182,0.08), transparent 55%), var(--paper);
+    background: radial-gradient(ellipse at top left, rgba(30,99,168,0.08), transparent 55%), var(--paper);
     background-image:
-      radial-gradient(ellipse at top left, rgba(46,117,182,0.09), transparent 55%),
-      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(11,61,102,0.03) 28px);
+      radial-gradient(ellipse at top left, rgba(30,99,168,0.10), transparent 55%),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(11,60,107,0.03) 28px);
     color:var(--ink);
     font-family:'Noto Sans Devanagari', sans-serif;
     min-height:100vh;
@@ -36,100 +37,112 @@
   .wrap{max-width:880px;margin:0 auto;}
 
   .letterhead{display:flex;align-items:center;gap:16px;border-bottom:3px solid var(--navy);padding-bottom:16px;margin-bottom:22px;}
-  .crest{width:56px;height:56px;flex:none;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow: inset 0 0 0 3px var(--blue-light);}
+  .crest{width:56px;height:56px;flex:none;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow: inset 0 0 0 3px var(--brass);}
   .crest svg{width:30px;height:30px;}
   .letterhead h1{font-family:'Noto Serif Devanagari',serif;font-weight:800;font-size:24px;margin:0;color:var(--navy);letter-spacing:0.3px;}
-  .letterhead .sub{font-size:13px;color:var(--blue-dark);margin-top:3px;font-family:'Teko',sans-serif;letter-spacing:2px;text-transform:uppercase;font-weight:600;}
-  .letterhead .stamp-mini{margin-left:auto;text-align:right;font-family:'Teko',sans-serif;color:var(--blue-dark);font-size:13px;letter-spacing:1px;}
+  .letterhead .sub{font-size:13px;color:var(--khaki-dark);margin-top:3px;font-family:'Teko',sans-serif;letter-spacing:2px;text-transform:uppercase;font-weight:600;}
+  .letterhead .stamp-mini{margin-left:auto;text-align:right;font-family:'Teko',sans-serif;color:var(--khaki-dark);font-size:13px;letter-spacing:1px;}
   .letterhead .stamp-mini b{display:block;color:var(--navy);font-size:15px;}
 
   .screen{display:none;}
   .screen.active{display:block;animation:fadein .35s ease;}
   @keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 
-  .intro-note{background:var(--paper-dark);border:1px dashed var(--blue);border-radius:4px;padding:14px 16px;margin-bottom:24px;font-size:14.5px;line-height:1.7;color:var(--ink);}
-  .intro-note b{color:var(--navy);}
+  .intro-note{background:rgba(255,255,255,0.5);border:1px dashed var(--khaki);border-radius:4px;padding:14px 16px;margin-bottom:24px;font-size:14.5px;line-height:1.7;color:var(--ink);}
+  .intro-note b{color:var(--maroon);}
 
-  .reg-card{background:#fff;border:1px solid var(--line);border-radius:2px 10px 10px 10px;box-shadow:var(--shadow);padding:30px 26px;max-width:520px;margin:0 auto;position:relative;overflow:hidden;}
-  .reg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--blue);}
+  /* REGISTER FORM */
+  .reg-card{background:var(--paper-dark);border:1px solid var(--paper-line);border-radius:2px 10px 10px 10px;box-shadow:var(--shadow);padding:30px 26px;max-width:520px;margin:0 auto;position:relative;overflow:hidden;}
+  .reg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--khaki);}
   .reg-card h2{font-family:'Noto Serif Devanagari',serif;font-size:21px;color:var(--navy);margin:0 0 6px;}
-  .reg-card .reg-sub{font-size:13.5px;color:var(--blue-dark);margin-bottom:22px;line-height:1.6;}
+  .reg-card .reg-sub{font-size:13.5px;color:var(--khaki-dark);margin-bottom:22px;line-height:1.6;}
   .field{margin-bottom:16px;}
-  .field label{display:block;font-size:13px;color:var(--blue-dark);margin-bottom:6px;font-weight:600;}
+  .field label{display:block;font-size:13px;color:var(--khaki-dark);margin-bottom:6px;font-weight:600;}
   .field input, .field select{
-    width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:5px;
-    background:var(--paper-dark);font-family:inherit;font-size:14.5px;color:var(--ink);
+    width:100%;padding:11px 13px;border:1.5px solid var(--paper-line);border-radius:5px;
+    background:rgba(255,255,255,0.7);font-family:inherit;font-size:14.5px;color:var(--ink);
   }
-  .field input:focus, .field select:focus{outline:none;border-color:var(--blue);}
+  .field input:focus, .field select:focus{outline:none;border-color:var(--khaki);}
   .reg-err{color:var(--maroon);font-size:12.5px;margin-top:14px;display:none;}
 
   .folder-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
-  .folder{position:relative;background:#fff;border:1px solid var(--line);border-radius:2px 10px 10px 10px;box-shadow:var(--shadow);cursor:pointer;padding:20px 18px 18px;transition:transform .18s ease, box-shadow .18s ease;overflow:hidden;}
-  .folder:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(11,61,102,0.20);}
-  .folder::before{content:'';position:absolute;top:0;left:0;right:0;height:34px;background:var(--navy);}
+  .folder{position:relative;background:var(--paper-dark);border:1px solid var(--paper-line);border-radius:2px 10px 10px 10px;box-shadow:var(--shadow);cursor:pointer;padding:20px 18px 18px;transition:transform .18s ease, box-shadow .18s ease;overflow:hidden;}
+  .folder:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(20,20,10,0.24);}
+  .folder::before{content:'';position:absolute;top:0;left:0;right:0;height:34px;background:var(--khaki);opacity:0.9;}
   .folder .tab-label{position:relative;z-index:2;font-family:'Teko',sans-serif;font-weight:600;letter-spacing:1.5px;color:#fff;font-size:15px;text-transform:uppercase;}
   .folder .ficon{font-size:30px;margin:18px 0 10px;}
   .folder h3{font-family:'Noto Serif Devanagari',serif;font-weight:700;font-size:19px;margin:0 0 6px;color:var(--navy);}
-  .folder p{margin:0;font-size:13.5px;color:var(--blue-dark);line-height:1.55;}
-  .folder .go{margin-top:14px;font-size:13px;color:var(--blue);font-weight:600;display:flex;align-items:center;gap:5px;}
-  .diff-strip{display:flex;gap:5px;margin-top:12px;flex-wrap:wrap;}
+  .folder p{margin:0;font-size:13.5px;color:var(--khaki-dark);line-height:1.55;}
+  .folder .go{margin-top:14px;font-size:13px;color:var(--maroon);font-weight:600;display:flex;align-items:center;gap:5px;}
+  .diff-strip{display:flex;gap:5px;margin-top:12px;}
   .diff-dot{font-size:11px;font-family:'Teko',sans-serif;letter-spacing:0.5px;padding:2px 7px;border-radius:3px;color:#fff;}
   .diff-easy{background:var(--olive);}
-  .diff-med{background:var(--blue);}
+  .diff-med{background:var(--gold);}
   .diff-hard{background:var(--maroon);}
-  .q-count{font-size:12px;color:var(--navy);font-weight:700;margin-top:8px;font-family:'Teko',sans-serif;letter-spacing:0.5px;}
 
-  .case-file{background:#fff;border:1px solid var(--line);border-radius:2px 10px 10px 10px;box-shadow:var(--shadow);padding:24px 22px 26px;position:relative;}
-  .case-file::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--blue);}
-  .file-meta{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:12.5px;color:var(--blue-dark);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px;font-family:'Teko',sans-serif;letter-spacing:0.6px;}
+  .case-file{background:var(--paper-dark);border:1px solid var(--paper-line);border-radius:2px 10px 10px 10px;box-shadow:var(--shadow);padding:24px 22px 26px;position:relative;}
+  .case-file::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--khaki);}
+  .file-meta{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:12.5px;color:var(--khaki-dark);border-bottom:1px solid var(--paper-line);padding-bottom:12px;margin-bottom:18px;font-family:'Teko',sans-serif;letter-spacing:0.6px;}
   .file-meta span b{color:var(--navy);font-weight:600;}
 
   .progress-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-  .progress-track{flex:1;height:6px;background:var(--paper-dark);border-radius:4px;overflow:hidden;}
-  .progress-fill{height:100%;background:var(--blue);border-radius:4px;transition:width .35s ease;}
-  .progress-label{font-size:12.5px;color:var(--blue-dark);white-space:nowrap;font-weight:600;}
+  .progress-track{flex:1;height:6px;background:rgba(30,42,51,0.12);border-radius:4px;overflow:hidden;}
+  .progress-fill{height:100%;background:var(--olive);border-radius:4px;transition:width .35s ease;}
+  .progress-label{font-size:12.5px;color:var(--khaki-dark);white-space:nowrap;font-weight:600;}
 
   .diff-badge{display:inline-block;font-family:'Teko',sans-serif;letter-spacing:1px;font-size:13px;padding:3px 12px;border-radius:20px;color:#fff;margin-bottom:14px;}
 
-  .q-title{font-family:'Noto Serif Devanagari',serif;font-weight:700;font-size:19px;line-height:1.5;color:var(--navy);margin:0 0 18px;}
+  .q-title{font-family:'Noto Serif Devanagari',serif;font-weight:700;font-size:19px;line-height:1.5;color:var(--navy);margin:0 0 10px;}
+  .step-hint{font-size:12.5px;color:var(--khaki-dark);background:rgba(63,127,191,0.08);border:1px dashed var(--khaki);border-radius:5px;padding:8px 12px;margin-bottom:16px;line-height:1.6;}
+  .brief-text{text-align:right;direction:rtl;font-size:15px;line-height:1.9;color:var(--ink);background:rgba(63,127,191,0.06);border:1px dashed var(--khaki);border-radius:6px;padding:16px 18px;}
   .options{display:flex;flex-direction:column;gap:10px;margin-bottom:6px;}
-  .opt{text-align:right;background:var(--paper-dark);border:1.5px solid var(--line);border-radius:6px;padding:13px 16px;font-size:14.5px;line-height:1.6;color:var(--ink);cursor:pointer;transition:.15s ease;font-family:inherit;display:flex;align-items:flex-start;gap:10px;width:100%;direction:rtl;}
-  .opt .oletter{flex:none;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Teko',sans-serif;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;direction:ltr;}
-  .opt:hover:not(.locked){border-color:var(--blue);background:#fff;}
-  .opt.correct{background:rgba(46,139,87,0.13);border-color:var(--olive);}
-  .opt.correct .oletter{background:var(--olive);}
-  .opt.wrong{background:rgba(178,58,58,0.12);border-color:var(--maroon);}
-  .opt.wrong .oletter{background:var(--maroon);}
-  .opt.dim{opacity:0.55;}
+  .opt{text-align:right;background:rgba(255,255,255,0.55);border:1.5px solid var(--paper-line);border-radius:6px;padding:13px 16px;font-size:14.5px;line-height:1.6;color:var(--ink);cursor:pointer;transition:.15s ease;font-family:inherit;display:flex;align-items:flex-start;gap:10px;width:100%;direction:rtl;}
+  .opt .ocheck{flex:none;width:24px;height:24px;border-radius:6px;background:#fff;border:2px solid var(--khaki);color:#fff;font-family:'Teko',sans-serif;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;direction:ltr;}
+  .opt:hover:not(.locked){border-color:var(--khaki);background:rgba(255,255,255,0.85);}
+  .opt.picked{border-color:var(--navy);background:rgba(63,127,191,0.10);}
+  .opt.picked .ocheck{background:var(--navy);border-color:var(--navy);}
+  .opt.picked .ocheck::after{content:'✓';}
+  .opt.correct{background:rgba(63,127,191,0.16);border-color:var(--olive);}
+  .opt.correct .ocheck{background:var(--olive);border-color:var(--olive);}
+  .opt.correct .ocheck::after{content:'✓';}
+  .opt.wrong{background:rgba(122,46,46,0.14);border-color:var(--maroon);}
+  .opt.wrong .ocheck{background:var(--maroon);border-color:var(--maroon);}
+  .opt.wrong .ocheck::after{content:'✕';}
+  .opt.missed{border-color:var(--olive);border-style:dashed;}
+  .opt.dim{opacity:0.7;}
   .opt.locked{cursor:default;}
+  .opt .opt-pts{flex:none;font-family:'Teko',sans-serif;font-size:13px;font-weight:600;direction:ltr;}
+  .opt.correct .opt-pts{color:var(--olive-dark);}
+  .opt.wrong .opt-pts{color:var(--maroon);}
 
   .feedback{margin-top:16px;border-radius:6px;padding:14px 16px;font-size:14px;line-height:1.7;display:none;position:relative;}
   .feedback.show{display:block;animation:fadein .25s ease;}
-  .feedback.ok{background:rgba(46,139,87,0.08);border:1px solid var(--olive);}
-  .feedback.bad{background:rgba(178,58,58,0.08);border:1px solid var(--maroon);}
+  .feedback.ok{background:rgba(63,127,191,0.10);border:1px solid var(--olive);}
+  .feedback.bad{background:rgba(122,46,46,0.09);border:1px solid var(--maroon);}
   .fb-head{font-family:'Teko',sans-serif;font-weight:600;letter-spacing:1.5px;font-size:16px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
   .fb-head.ok-c{color:var(--olive-dark);}
   .fb-head.bad-c{color:var(--maroon);}
+  .fb-points{margin-top:8px;font-family:'Teko',sans-serif;font-size:15px;letter-spacing:0.5px;color:var(--navy);font-weight:600;}
   .stamp{display:inline-block;border:2.5px solid currentColor;border-radius:6px;padding:1px 8px;transform:rotate(-4deg);font-family:'Teko',sans-serif;letter-spacing:2px;}
 
   .nav-row{display:flex;justify-content:flex-end;margin-top:20px;gap:10px;}
   .btn{font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;font-size:14.5px;padding:11px 22px;border-radius:5px;border:none;cursor:pointer;transition:.15s ease;}
   .btn-primary{background:var(--navy);color:#fff;}
-  .btn-primary:hover{background:var(--blue-dark);}
-  .btn-primary:disabled{background:#a9c3d8;cursor:not-allowed;}
-  .btn-ghost{background:transparent;color:var(--blue-dark);border:1.5px solid var(--blue);}
-  .btn-ghost:hover{background:var(--paper-dark);}
+  .btn-primary:hover{background:#25384d;}
+  .btn-primary:disabled{background:#b8b2a2;cursor:not-allowed;}
+  .btn-ghost{background:transparent;color:var(--khaki-dark);border:1.5px solid var(--khaki);}
+  .btn-ghost:hover{background:rgba(138,123,92,0.12);}
 
-  .end-card{background:#fff;border:1px solid var(--line);border-radius:2px 10px 10px 10px;box-shadow:var(--shadow);padding:34px 26px;text-align:center;position:relative;overflow:hidden;}
-  .end-card::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--navy);}
+  .end-card{background:var(--paper-dark);border:1px solid var(--paper-line);border-radius:2px 10px 10px 10px;box-shadow:var(--shadow);padding:34px 26px;text-align:center;position:relative;overflow:hidden;}
+  .end-card::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--brass);}
   .big-stamp{display:inline-block;border:3px solid var(--olive);color:var(--olive-dark);border-radius:10px;padding:8px 22px;transform:rotate(-5deg);font-family:'Teko',sans-serif;letter-spacing:3px;font-size:22px;font-weight:600;margin-bottom:14px;}
   .score-big{font-family:'Teko',sans-serif;font-size:52px;color:var(--navy);font-weight:600;margin:6px 0 2px;}
-  .score-sub{color:var(--blue-dark);font-size:14px;margin-bottom:22px;}
-  .recap{text-align:right;direction:rtl;background:var(--paper-dark);border:1px dashed var(--blue);border-radius:6px;padding:16px 18px;margin:0 0 24px;font-size:13.5px;line-height:1.9;color:var(--ink);max-height:340px;overflow-y:auto;}
+  .score-sub{color:var(--khaki-dark);font-size:14px;margin-bottom:22px;}
+  .recap{text-align:right;direction:rtl;background:rgba(255,255,255,0.5);border:1px dashed var(--khaki);border-radius:6px;padding:16px 18px;margin:0 0 24px;font-size:13.8px;line-height:2;color:var(--ink);}
   .recap b{color:var(--navy);}
   .end-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 
-  footer{text-align:center;margin-top:34px;font-size:12px;color:var(--blue-dark);line-height:1.8;}
+  footer{text-align:center;margin-top:34px;font-size:12px;color:var(--khaki-dark);line-height:1.8;}
 
   @media(max-width:520px){
     .letterhead h1{font-size:19px;}
@@ -144,8 +157,8 @@
   <div class="letterhead">
     <div class="crest">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L20 5V11C20 16 16.5 20 12 22C7.5 20 4 16 4 11V5L12 2Z" fill="#5FA8DE"/>
-        <path d="M9 12l2 2 4-4" stroke="#0B3D66" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 2L20 5V11C20 16 16.5 20 12 22C7.5 20 4 16 4 11V5L12 2Z" fill="#FFFFFF"/>
+        <path d="M9 12l2 2 4-4" stroke="#0B3C6B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
     <div>
@@ -192,34 +205,52 @@
   <!-- SCREEN 1: CASE SELECTION -->
   <section class="screen" id="screenHome">
     <div class="intro-note">
-      प्रत्येक फाईलमध्ये <b>१५ पायऱ्या</b> आहेत — ५ सोप्या, ५ मध्यम व ५ कठीण/अवघड निर्णयक्षमता तपासणाऱ्या. काही पर्याय जाणूनबुजून दिशाभूल करणारे (tricky) ठेवले आहेत — नियमांचे बारकावे लक्षात घेऊनच निवड करा. संदर्भ: BNS / BNSS / BSA (जुलै २०२४ पासून लागू). <b>टीप:</b> ही सिम्युलेशन प्रशिक्षण/सराव हेतूसाठी आहे — प्रत्यक्ष कलमे नेहमी अद्ययावत मॅन्युअलनुसार पडताळून घ्यावीत.
+      प्रत्येक प्रकरणात <b>५ पायऱ्या</b> असतील — सुरुवातीच्या पायऱ्या <b>सोप्या</b>, नंतर <b>मध्यम</b> व शेवटच्या <b>कठीण / अवघड</b> निर्णयक्षमता तपासणाऱ्या असतील. काही पर्याय जाणूनबुजून दिशाभूल करणारे (tricky) ठेवले आहेत — नियमांचे बारकावे लक्षात घेऊनच निवड करा. संदर्भ: BNS / BNSS / BSA (जुलै २०२४ पासून लागू). <b>टीप:</b> ही सिम्युलेशन प्रशिक्षण/सराव हेतूसाठी आहे — प्रत्यक्ष कलमे नेहमी अद्ययावत मॅन्युअलनुसार पडताळून घ्यावीत.
     </div>
     <div class="folder-grid" id="folderGrid"></div>
+  </section>
+
+  <!-- SCREEN 1.5: CASE STUDY BRIEF -->
+  <section class="screen" id="screenBrief">
+    <div class="case-file">
+      <div class="file-meta">
+        <span><b id="briefCaseNo">गु.र.नं. —</b></span>
+        <span id="briefCaseType">प्रकार —</span>
+      </div>
+      <div class="q-title" id="briefTitle" style="margin-bottom:14px;"></div>
+      <div class="brief-text" id="briefText"></div>
+      <div class="nav-row">
+        <button class="btn btn-ghost" id="briefBackBtn">← प्रकरण यादीकडे</button>
+        <button class="btn btn-primary" id="briefStartBtn">प्रकरण सुरू करा →</button>
+      </div>
+    </div>
   </section>
 
   <!-- SCREEN 2: SIMULATION -->
   <section class="screen" id="screenSim">
     <div class="case-file">
       <div class="file-meta">
-        <span id="fileNoTag"><b>फाईल क्र. —</b></span>
         <span><b id="caseNo">गु.र.नं. —</b></span>
         <span id="caseType">प्रकार —</span>
         <span id="casePolice">ठाणे: —</span>
       </div>
       <div class="progress-row">
         <div class="progress-track"><div class="progress-fill" id="progFill" style="width:0%"></div></div>
-        <div class="progress-label" id="progLabel">पायरी १/१५</div>
+        <div class="progress-label" id="progLabel">पायरी १/५</div>
       </div>
       <div id="diffBadge" class="diff-badge">सोपे</div>
       <div class="q-title" id="qTitle"></div>
+      <div class="step-hint">या परिस्थितीत योग्य वाटणाऱ्या सर्व कृती निवडा (एक किंवा अधिक). प्रत्येक बरोबर कृतीचे गुण मिळतील, चुकीच्या कृतीचे गुण वजा होतील.</div>
       <div class="options" id="optionsBox"></div>
       <div class="feedback" id="feedbackBox">
         <div class="fb-head" id="fbHead"></div>
         <div id="fbBody"></div>
+        <div class="fb-points" id="fbPoints"></div>
       </div>
       <div class="nav-row">
         <button class="btn btn-ghost" id="backHomeBtn">← प्रकरण यादीकडे</button>
-        <button class="btn btn-primary" id="nextBtn" disabled>पुढील पायरी →</button>
+        <button class="btn btn-primary" id="submitBtn">उत्तर सादर करा</button>
+        <button class="btn btn-primary" id="nextBtn" style="display:none;">पुढील पायरी →</button>
       </div>
     </div>
   </section>
@@ -228,7 +259,7 @@
   <section class="screen" id="screenEnd">
     <div class="end-card">
       <div class="big-stamp">प्रशिक्षण पूर्ण</div>
-      <div class="score-big" id="endScore">0 / 15</div>
+      <div class="score-big" id="endScore">0 / 5</div>
       <div class="score-sub" id="endCaseName">बरोबर उत्तरे</div>
       <div class="recap" id="recapBox"></div>
       <div class="end-actions">
@@ -263,596 +294,524 @@ document.getElementById('regSubmit').addEventListener('click', ()=>{
 });
 
 /* ---------------- CASE DATA ---------------- */
+// diff: 'easy' | 'med' | 'hard'
 const DIFF_LABEL = {easy:'सोपे', med:'मध्यम', hard:'कठीण'};
 const DIFF_CLASS = {easy:'diff-easy', med:'diff-med', hard:'diff-hard'};
 
-function mk(diff,q,opts,exp){ return {diff,q,opts,exp}; }
-function O(t,c){ return {t,c: !!c}; }
-
 const CASES = [
   {
-    id:'theft', fileNo:'फाईल क्र. ०१', icon:'🗝️', title:'घरफोडी / चोरी', type:'मालमत्ता विषयक गुन्हा',
+    id:'theft', icon:'🗝️', tab:'फाईल क्र. ०१', title:'घरफोडी / चोरी', type:'मालमत्ता विषयक गुन्हा',
     desc:'तक्रारदार घराच्या घरफोडीची तक्रार घेऊन ठाण्यात येतो.',
+    brief:'रात्री साडेअकराच्या सुमारास, सातपूर भागातील एका बंद बंगल्यात घरफोडी झाल्याची घटना घडते. सकाळी घरमालक परत आल्यावर मुख्य दरवाजाचे कुलूप तोडलेले आढळते व घरातील कपाट अस्ताव्यस्त पडलेले दिसते. सोन्याचे दागिने व रोख रक्कम गायब आहे. घरमालक तात्काळ जवळच्या पोलीस ठाण्यात धाव घेतो. तुम्ही या प्रकरणाचे तपास अधिकारी आहात — पहिल्या क्षणापासून ते आरोपपत्र दाखल होईपर्यंतचा प्रत्येक निर्णय तुमच्यावर अवलंबून आहे.',
     steps:[
-      mk('easy','तक्रारदार स्पष्ट दखलपात्र (cognizable) गुन्ह्याची तक्रार घेऊन येतो. पहिली कृती काय असावी?',
-        [O('आधी प्राथमिक चौकशी करून मगच FIR नोंदवायची की नाही ठरवा'),
-         O('तात्काळ FIR नोंदवा — दखलपात्र गुन्ह्यात नोंदणी विलंबाशिवाय बंधनकारक आहे',1),
-         O('तक्रारदाराला दुसऱ्या दिवशी बोलवा'),
-         O('थेट न्यायालयात पाठवा')],
-        'BNSS कलम १७३ नुसार स्पष्ट दखलपात्र गुन्ह्यात तात्काळ FIR नोंदणी बंधनकारक आहे. प्राथमिक चौकशीची तरतूद फक्त ३-७ वर्षे शिक्षेच्या व स्वरूप साशंक असलेल्या गुन्ह्यांपुरती मर्यादित आहे.'),
-      mk('easy','घटनास्थळी पोहोचल्यावर सर्वप्रथम काय कराल?',
-        [O('उपलब्ध वस्तू लगेच उचलून सुरक्षित ठेवा'),
-         O('फक्त फोटो काढून पुढील कामाकडे निघा'),
-         O('घटनास्थळ जैसे-थे ठेवून पंचांसमोर पंचनामा सुरू करा',1),
-         O('शेजाऱ्यांची चौकशी न करता निघून जा')],
-        'घटनास्थळ जतन करणे (scene preservation) हे तपासाचे मूलभूत तत्त्व आहे — पुरावा दूषित झाल्यास संपूर्ण तपास कमकुवत होतो.'),
-      mk('easy','FIR नोंदवल्यावर तक्रारदाराला काय द्यावे?',
-        [O('FIR ची प्रत विनामूल्य व तात्काळ द्यावी',1),
-         O('प्रत हवी असल्यास शुल्क भरून घ्यावी लागते'),
-         O('प्रत फक्त कोर्टाच्या आदेशाने दिली जाते'),
-         O('प्रत देण्याची गरज नाही')],
-        'दखलपात्र गुन्ह्याची FIR नोंदवल्यावर तक्रारदारास तिची प्रत विनामूल्य देणे हा त्याचा कायदेशीर हक्क आहे.'),
-      mk('easy','तक्रार आपल्या ठाण्याच्या हद्दीबाहेरील असल्यास काय कराल?',
-        [O('झिरो FIR नोंदवून योग्य ठाण्याकडे वर्ग करा',1),
-         O('तक्रार नाकारून योग्य ठाण्यात जायला सांगा'),
-         O('तक्रार घेऊन कोणतीही नोंद न करता ठेवा'),
-         O('तक्रारदारास स्वतः वर्ग करायला सांगा')],
-        'BNSS अंतर्गत Zero FIR ला स्पष्ट कायदेशीर मान्यता आहे — हद्द काहीही असो, FIR नोंदवून नंतर संबंधित ठाण्याकडे वर्ग करणे बंधनकारक आहे.'),
-      mk('easy','चोरी झालेल्या वस्तूंची यादी कशी नोंदवाल?',
-        [O('फक्त अंदाजे एकूण किंमत नोंदवा'),
-         O('तपशीलवार यादी — ब्रँड, ओळख खुणा, अंदाजे किंमत — नोंदवा',1),
-         O('यादीची गरज नाही, नंतर आठवणीने सांगेल'),
-         O('फक्त वस्तूंची संख्या नोंदवा')],
-        'तपशीलवार यादी मुद्देमाल ओळखणे, परत मिळवणे व आरोपपत्रात नोंद करणे यासाठी अत्यावश्यक आहे.'),
-      mk('med','भौतिक पुरावा (ठसे, वस्तू) हाताळताना कोणती कार्यपद्धती योग्य?',
-        [O('अनुभव असल्यास फॉरेन्सिक टीमशिवायही अधिकारी स्वतः ठसे उचलू शकतो'),
-         O('फॉरेन्सिक पथकाच्या मदतीने पंचांसमोर पुरावा सील करून जप्त करा',1),
-         O('हाताने वस्तू उचलून खिशात ठेवा'),
-         O('पुरावा नंतर सवडीने गोळा करू')],
-        'साखळी-पुरावा (chain of custody) व वैज्ञानिक पद्धत राखण्यासाठी फॉरेन्सिक पथक व पंचांसमोर सीलबंद जप्तीच आवश्यक आहे.'),
-      mk('med','परिसरातील चौकशी कशी कराल?',
-        [O('फक्त तक्रारदाराच्या शेजाऱ्यालाच विचारून थांबा'),
-         O('पद्धतशीरपणे परिसरातील सर्व संबंधितांकडून संशयास्पद हालचालींबाबत चौकशी करा',1),
-         O('चौकशीची गरज नाही, CCTV पुरेसा आहे'),
-         O('चौकशी फक्त लेखी अर्जाद्वारेच करावी')],
-        'पद्धतशीर परिसर-चौकशी अनेकदा प्रत्यक्षदर्शी किंवा संशयितांची ओळख देणारी महत्त्वाची माहिती देते.'),
-      mk('med','सीसीटीव्ही फुटेज तपासताना कोणती पद्धत योग्य?',
-        [O('फक्त तक्रारदाराच्या घरासमोरचा कॅमेरा तपासा'),
-         O('परिसरातील सर्व उपलब्ध कॅमेरे तपासून घटनेच्या वेळेनुसार फुटेज जुळवा',1),
-         O('फुटेज महत्त्वाचे नाही, साक्षीदार पुरेसे'),
-         O('फुटेज एका आठवड्यानंतर मागवा')],
-        'विविध कोनांतील फुटेज वेळेनुसार जुळवल्याने आरोपीचा मार्ग व वाहन निश्चित करता येते; विलंबाने डेटा डिलीट होण्याचा धोका असतो.'),
-      mk('med','चोरीचा माल विकला जाण्याची शक्यता लक्षात घेऊन काय कराल?',
-        [O('स्थानिक सराफ/जुनी वस्तू विक्रेते यांना वर्णन देऊन सतर्क करा',1),
-         O('माल विकला जाईपर्यंत वाट पाहा'),
-         O('फक्त तक्रारदारालाच बाजारात शोधायला सांगा'),
-         O('सराफांना कळवण्याची गरज नाही')],
-        'विक्रेत्यांना सतर्क केल्याने मुद्देमाल लवकर सापडण्याची व आरोपीपर्यंत पोहोचण्याची शक्यता वाढते.'),
-      mk('med','संशयित व्यक्तीची चौकशी कशी कराल?',
-        [O('जबरदस्तीने घरातून उचलून थेट ठाण्यात आणा'),
-         O('नियमानुसार नोटीस बजावून चौकशीसाठी बोलवा',1),
-         O('चौकशीची गरज नाही, संशयावरून अटक करा'),
-         O('चौकशी फक्त पंचांसमोरच करावी लागते')],
-        'योग्य कायदेशीर प्रक्रियेनुसार (नोटीस/समन्स) चौकशीसाठी बोलावणे आवश्यक आहे; विनाकारण जबरदस्तीने ताब्यात घेणे अधिकारांचा भंग ठरतो.'),
-      mk('hard','साक्षीदार अनेक असून त्यांच्या साक्षीत किरकोळ विसंगती दिसत आहेत. काय कराल?',
-        [O('सर्वांना एकत्र बसवून चर्चा करून एकसंध जबाब तयार करून घ्या'),
-         O('जो जबाब इतरांशी जुळत नाही त्या साक्षीदाराला वगळून टाका'),
-         O('प्रत्येकाचा स्वतंत्र व मूळ जबाब जसाच्या तसा नोंदवा — किरकोळ विसंगती नैसर्गिक असते',1),
-         O('सर्व साक्षीदारांना एकच लेखी मायना वाचून त्यावर सही घ्या')],
-        'साक्षीदारांना एकत्र बसवून "सुसंगत" जबाब घडवणे साक्ष-दुषण (witness tutoring) मानले जाते व तपासाची विश्वासार्हता घालवते.'),
-      mk('hard','विहित तपास-मुदत संपत आली आहे पण फॉरेन्सिक अहवाल अद्याप आलेला नाही. योग्य कृती?',
-        [O('उपलब्ध पुराव्यांच्या आधारे मुदतीत आरोपपत्र दाखल करा; अहवाल आल्यावर पूरक आरोपपत्र दाखल करा',1),
-         O('अहवाल येईपर्यंत वरिष्ठांना न कळवता स्वतःच मुदत वाढवून घ्या'),
-         O('पुरावा अपूर्ण आहे म्हणून प्रकरण तात्पुरते बंद करा'),
-         O('फॉरेन्सिक अहवालाची वाट न पाहता तो गृहीत धरून आरोपपत्रात नमूद करा')],
-        'विहित मुदतीचे पालन आवश्यक आहे — उपलब्ध पुराव्यांवर आरोपपत्र दाखल करून नंतर पूरक आरोपपत्राद्वारे अतिरिक्त पुरावा जोडणे ही योग्य पद्धत आहे.'),
-      mk('hard','तक्रारदाराने सांगितलेली चोरी खोटी असून विमा दावा करण्यासाठी बनाव केला असल्याचा तुम्हाला संशय आहे. काय कराल?',
-        [O('संशयावरूनच तक्रार खोटी ठरवून FIR रद्द करा'),
-         O('संशय मनात ठेवून, तरीही पुराव्यांच्या आधारेच निष्पक्ष तपास पूर्ण करा',1),
-         O('तक्रारदारास घाबरवून तक्रार मागे घ्यायला लावा'),
-         O('विमा कंपनीलाच सर्व चौकशी करू द्या, पोलीस तपास थांबवा')],
-        'संशय हा निष्कर्ष नाही — पुराव्यांच्या आधारेच निर्णय घ्यावा. उतावळेपणाने तक्रार खोटी ठरवणे किंवा दाबणे या दोन्ही गंभीर त्रुटी आहेत.'),
-      mk('hard','वरिष्ठ अधिकाऱ्याकडून राजकीय दबावाखाली गुन्हा सौम्य कलमांत नोंदवण्याची अनौपचारिक सूचना येते. काय कराल?',
-        [O('वरिष्ठांचा आदेश आहे म्हणून तसेच करा'),
-         O('पुराव्यांनुसार योग्य कलमे लावा व अनुचित दबावाबाबत लेखी नोंद ठेवा',1),
-         O('दबावाला घाबरून राजीनामा द्या'),
-         O('तक्रारदारालाच वरिष्ठांशी भांडायला सांगा')],
-        'तपास पुराव्यांवर आधारित व कायद्यानुसारच असावा. अनुचित मौखिक दबाव असल्यास त्याची लेखी नोंद ठेवणे व नियमांचे पालन करणे हे अधिकाऱ्याचे कर्तव्य आहे.'),
-      mk('hard','तपासात संशयित अल्पवयीन (१६ वर्षांचा) असल्याचे निष्पन्न झाले. पुढे काय?',
-        [O('प्रौढांप्रमाणेच सर्वसाधारण प्रक्रिया वापरा'),
-         O('Juvenile Justice Act नुसार वेगळी प्रक्रिया वापरून बाल कल्याण समितीसमोर हजर करा',1),
-         O('अल्पवयीन असल्याने कोणतीही कारवाई करू नका'),
-         O('पालकांच्या ताब्यात देऊन प्रकरण बंद करा')],
-        'अल्पवयीन आरोपीसाठी सर्वसाधारण फौजदारी प्रक्रियेऐवजी बाल न्याय कायद्यांतर्गत विशेष, संरक्षणात्मक प्रक्रिया अवलंबणे कायद्याने बंधनकारक आहे.')
+      {diff:'easy', q:'तक्रारदार स्पष्ट दखलपात्र (cognizable) गुन्ह्याची तक्रार घेऊन येतो. पहिली कृती काय असावी?',
+       opts:[
+         {t:'आधी प्राथमिक चौकशी (preliminary enquiry) करून मगच FIR नोंदवायची की नाही ठरवा', c:false},
+         {t:'तात्काळ FIR नोंदवा — दखलपात्र गुन्ह्यात नोंदणी विलंबाशिवाय बंधनकारक आहे', c:true},
+         {t:'तक्रारदाराला दुसऱ्या दिवशी बोलवा', c:false},
+         {t:'थेट न्यायालयात पाठवा', c:false}],
+       exp:'BNSS कलम १७३ नुसार स्पष्ट दखलपात्र गुन्ह्यात तात्काळ FIR नोंदणी बंधनकारक आहे. प्राथमिक चौकशीची तरतूद फक्त ३-७ वर्षे शिक्षेच्या व स्वरूप साशंक असलेल्या गुन्ह्यांपुरती मर्यादित आहे — स्पष्ट घरफोडीसाठी ती लागू होत नाही, हा एक सामान्य गोंधळ आहे.'},
+      {diff:'easy', q:'घटनास्थळी पोहोचल्यावर सर्वप्रथम काय कराल?',
+       opts:[
+         {t:'उपलब्ध वस्तू लगेच उचलून सुरक्षित ठेवा', c:false},
+         {t:'फक्त फोटो काढून पुढील कामाकडे निघा', c:false},
+         {t:'घटनास्थळ जैसे-थे (undisturbed) ठेवून पंचांसमोर पंचनामा सुरू करा', c:true},
+         {t:'शेजाऱ्यांची चौकशी न करता निघून जा', c:false}],
+       exp:'घटनास्थळ जतन करणे (scene preservation) हे तपासाचे मूलभूत तत्त्व आहे — पुरावा दूषित झाल्यास संपूर्ण तपास कमकुवत होतो.'},
+      {diff:'med', q:'भौतिक पुरावा (ठसे, वस्तू) हाताळताना कोणती कार्यपद्धती योग्य?',
+       opts:[
+         {t:'अनुभव असल्यास फॉरेन्सिक टीमशिवायही अधिकारी स्वतः ठसे उचलू शकतो, वेळ वाचतो', c:false},
+         {t:'फॉरेन्सिक पथकाच्या मदतीने पंचांसमोर पुरावा सील करून जप्त करा', c:true},
+         {t:'हाताने वस्तू उचलून खिशात ठेवा', c:false},
+         {t:'पुरावा नंतर सवडीने गोळा करू', c:false}],
+       exp:'अनुभव कितीही असला तरी साखळी-पुरावा (chain of custody) व वैज्ञानिक पद्धत राखण्यासाठी फॉरेन्सिक पथक व पंचांसमोर सीलबंद जप्तीच आवश्यक आहे — "वेळ वाचवणारा" शॉर्टकट कोर्टात पुरावा अमान्य होण्यास कारण ठरू शकतो.'},
+      {diff:'hard', q:'साक्षीदार अनेक असून त्यांच्या साक्षीत किरकोळ विसंगती दिसत आहेत. काय कराल?',
+       opts:[
+         {t:'सर्वांना एकत्र बसवून चर्चा करून एकसंध व सुसंगत जबाब तयार करून घ्या, जेणेकरून कोर्टात प्रश्न येणार नाहीत', c:false},
+         {t:'ज्या साक्षीदाराचा जबाब इतरांशी जुळत नाही त्याला वगळून टाका', c:false},
+         {t:'प्रत्येकाचा स्वतंत्र व मूळ जबाब जसाच्या तसा नोंदवा — किरकोळ विसंगती नैसर्गिक असते, ती दडवू नका', c:true},
+         {t:'सर्व साक्षीदारांना एकच लेखी मायना वाचून त्यावर सही घ्या', c:false}],
+       exp:'साक्षीदारांना एकत्र बसवून "सुसंगत" जबाब घडवणे हे साक्ष-दुषण (coaching/tutoring witnesses) मानले जाते व तपासाची विश्वासार्हता घालवते. किरकोळ नैसर्गिक विसंगती स्वीकारार्ह असते; कृत्रिम एकसंधता संशयास्पद ठरते.'},
+      {diff:'hard', q:'विहित तपास-मुदत संपत आली आहे पण काही तांत्रिक पुरावा (उदा. फॉरेन्सिक अहवाल) अद्याप आलेला नाही. योग्य कृती?',
+       opts:[
+         {t:'उपलब्ध पुराव्यांच्या आधारे मुदतीत आरोपपत्र दाखल करा; प्रलंबित अहवाल आल्यावर नियमानुसार पूरक आरोपपत्र (supplementary chargesheet) दाखल करता येईल', c:true},
+         {t:'अहवाल येईपर्यंत वरिष्ठांना कळवल्याशिवाय स्वतःच मुदत वाढवून घ्या', c:false},
+         {t:'पुरावा अपूर्ण आहे म्हणून प्रकरण तात्पुरते बंद करा', c:false},
+         {t:'फॉरेन्सिक अहवालाची वाट न पाहता तो गृहीत धरून आरोपपत्रात नमूद करा', c:false}],
+       exp:'विहित मुदतीचे पालन आवश्यक आहे — त्यासाठी उपलब्ध पुराव्यांवर आरोपपत्र दाखल करून नंतर पूरक आरोपपत्राद्वारे अतिरिक्त पुरावा जोडणे ही योग्य व कायदेशीर पद्धत आहे. स्वतःच्या अधिकारात मुदत वाढवणे किंवा अहवाल गृहीत धरणे या दोन्ही गंभीर त्रुटी आहेत.'},
+      {diff:'easy', q:'चोरीला गेलेल्या ऐवजाची यादी नोंदवताना काय महत्त्वाचे?',
+       opts:[
+         {t:'फक्त एकूण अंदाजे किंमत लिहा, तपशील गरजेचा नाही', c:false},
+         {t:'प्रत्येक वस्तूचे तपशीलवार वर्णन, अंदाजे किंमत व ओळखता येण्याजोग्या खुणा (उदा. सिरीयल नंबर) नोंदवा', c:true},
+         {t:'तक्रारदाराला यादी स्वतः नंतर पाठवायला सांगा', c:false},
+         {t:'फक्त सोन्या-चांदीच्या वस्तूंचीच नोंद घ्या', c:false}],
+       exp:'तपशीलवार व ओळखनिश्चितीयोग्य यादी मुद्देमाल सापडल्यावर तो तक्रारदाराचाच आहे हे सिद्ध करण्यास व शोधकार्यास उपयुक्त ठरते.'},
+      {diff:'med', q:'शेजारी व इतर संभाव्य साक्षीदारांचे जबाब घेताना कोणती पद्धत योग्य?',
+       opts:[
+         {t:'सर्वांचे जबाब एकत्र चर्चा घडवून सुसंगत करून घ्या', c:false},
+         {t:'प्रत्येकाचा स्वतंत्र जबाब जसाच्या तसा नोंदवा, स्वतःच्या अंदाजावर आधारित निष्कर्ष टाळा', c:true},
+         {t:'फक्त तक्रारदाराच्या ओळखीच्या शेजाऱ्यांचेच जबाब घ्या', c:false},
+         {t:'जबाब घेण्याची घाई करू नका, नंतर सवडीने घ्या', c:false}],
+       exp:'स्वतंत्र व मूळ जबाब नोंदवणे हे साक्ष-दुषणाची शक्यता टाळते आणि तपासाची विश्वासार्हता टिकवते.'},
+      {diff:'hard', q:'तपासात एक अल्पवयीन (Juvenile) संशयित सापडतो. पुढील कार्यवाही काय?',
+       opts:[
+         {t:'प्रौढ आरोपीप्रमाणेच अटक करून सर्वसाधारण कोठडीत ठेवा', c:false},
+         {t:'Juvenile Justice Act नुसार बाल न्याय मंडळासमोर हजर करा; विशेष किशोर पोलीस घटक व पालक/संरक्षकाच्या उपस्थितीत कार्यवाही करा', c:true},
+         {t:'वय लहान असल्याने कोणतीही कार्यवाही न करता सोडून द्या', c:false},
+         {t:'पालकांना न कळवता स्वतंत्रपणे चौकशी पूर्ण करा', c:false}],
+       exp:'अल्पवयीन संशयितांसाठी Juvenile Justice (Care and Protection of Children) Act अंतर्गत वेगळी व संरक्षणात्मक प्रक्रिया बंधनकारक आहे — प्रौढांसारखी वागणूक बेकायदेशीर आहे.'}
     ]
   },
   {
-    id:'accident', fileNo:'फाईल क्र. ०२', icon:'🚦', title:'रस्ता अपघात (Hit & Run)', type:'अपघात / मोटार वाहन गुन्हा',
+    id:'accident', icon:'🚦', tab:'फाईल क्र. ०२', title:'रस्ता अपघात (Hit & Run)', type:'अपघात / मोटार वाहन गुन्हा',
     desc:'रात्री उशिरा एका वाहनाने पादचाऱ्याला धडक देऊन पळ काढला.',
+    brief:'रात्री साधारण पावणेअकराच्या सुमारास एका मुख्य रस्त्यावर भरधाव वेगाने जाणाऱ्या एका अज्ञात वाहनाने रस्ता ओलांडणाऱ्या पादचाऱ्याला जोरदार धडक दिली आणि वाहन न थांबता पळून गेले. जखमी व्यक्ती गंभीर अवस्थेत रस्त्यावर पडलेली आहे. जवळच्या नागरिकांनी १०० नंबरवर कॉल करून घटनेची माहिती दिली आहे. तुम्ही सर्वात जवळचे प्रतिसाद अधिकारी म्हणून घटनास्थळी पोहोचत आहात.',
     steps:[
-      mk('easy','माहिती मिळताच सर्वोच्च प्राधान्य काय असावे?',
-        [O('आधी आरोपीचा शोध सुरू करा'),
-         O('आधी पंचनामा पूर्ण करा, मग रुग्णालयाचा विचार करा'),
-         O('जखमींना तात्काळ जवळच्या रुग्णालयात हलवणे ("गोल्डन अवर")',1),
-         O('वाहतूक पोलिसांना कळवून स्वतः थांबा')],
-        'जीव वाचवणे हे प्रथम कर्तव्य आहे — "गोल्डन अवर" मध्ये उपचार मिळाल्यास मृत्यूचे प्रमाण मोठ्या प्रमाणात कमी होते.'),
-      mk('easy','घटनास्थळाचे व्यवस्थापन कसे कराल?',
-        [O('रस्ता लगेच मोकळा करून वाहतूक सुरू ठेवा'),
-         O('क्षेत्र सुरक्षित करून पंचनामा करा व वाहतूक वळवा',1),
-         O('घटनास्थळ न पाहताच अहवाल लिहा'),
-         O('साक्षीदार गोळा न करता निघून जा')],
-        'पुरावा (टायरचे ठसे, तुटलेले भाग) जतन करण्यासाठी क्षेत्र सुरक्षित करून पंचनामा करणे आवश्यक आहे.'),
-      mk('easy','चालक जागीच सापडल्यास कोणती तपासणी तात्काळ करावी?',
-        [O('श्वास तपासणी (अल्कोहोल टेस्ट) करून MLC नोंदवा',1),
-         O('चालकाच्या शब्दावर विसंबून राहा, तपासणी नको'),
-         O('चालकास घरी जाऊ द्या, नंतर बोलावू'),
-         O('फक्त परवाना तपासा')],
-        'दारू पिऊन वाहन चालवणे हा अपघाताचा प्रमुख घटक असू शकतो — तात्काळ वैज्ञानिक तपासणी व MLC नोंद पुराव्यासाठी आवश्यक आहे.'),
-      mk('easy','अपघातग्रस्त वाहनाबाबत काय कराल?',
-        [O('तात्काळ पंचनामा करून वाहनाचे नुकसान नोंदवा',1),
-         O('वाहन मालकाकडे परत द्या, नोंद न ठेवता'),
-         O('वाहनाची तपासणी आवश्यक नाही'),
-         O('वाहन जागीच सोडून द्या')],
-        'वाहनावरील नुकसान व खुणा या वेगाचा अंदाज व टक्कर कशी झाली हे ठरवण्यासाठी महत्त्वाचा पुरावा असतो.'),
-      mk('easy','जखमी व्यक्तीचा मृत्यू झाल्यास प्रथम काय कराल?',
-        [O('नातेवाईकांना व वरिष्ठांना तात्काळ कळवा',1),
-         O('नातेवाईकांना कळवण्याआधी तपास पूर्ण करा'),
-         O('मृत्यूची बातमी दिली नाही तरी चालते'),
-         O('फक्त रुग्णालय प्रशासनाला कळवा, नातेवाईकांना नको')],
-        'तात्काळ सूचना देणे हे मानवी कर्तव्य आहे व पुढील वैद्यकीय-कायदेशीर प्रक्रिया (पोस्टमॉर्टेम, ओळख पटवणे) यासाठीही आवश्यक आहे.'),
-      mk('med','फरार वाहन/चालकाचा शोध कसा घ्याल?',
-        [O('फक्त तक्रारदाराच्या वर्णनावर अवलंबून राहा'),
-         O('जवळपासचे CCTV फुटेज, टोल नाका नोंदी व नंबर प्लेट डेटा तपासा',1),
-         O('शोध घेणे आवश्यक नाही, विमा कंपनी बघेल'),
-         O('एका आठवड्यानंतर शोध सुरू करा')],
-        'तंत्रज्ञान-आधारित पुरावा (CCTV, ANPR, टोल डेटा) हा तपासाचा गाभा आहे — विलंब झाल्यास फुटेज डिलीट होण्याची शक्यता असते.'),
-      mk('med','MLC व पोस्टमॉर्टेम अहवालाबाबत काय भूमिका घ्याल?',
-        [O('आवश्यकतेनुसार MLC व पोस्टमॉर्टेम अहवाल अनिवार्यपणे घ्या',1),
-         O('स्पष्ट अपघात दिसत असल्याने अहवालाची गरज नाही'),
-         O('अहवाल फक्त कोर्टाने मागितल्यासच घ्यावा'),
-         O('डॉक्टरांच्या मौखिक माहितीवरच अहवाल तयार करा')],
-        'MLC व पोस्टमॉर्टेम अहवाल गुन्ह्याचे स्वरूप, कलमे व मृत्यूचे नेमके कारण निश्चित करण्यासाठी कायदेशीरदृष्ट्या अनिवार्य पुरावे आहेत.'),
-      mk('med','अपघातस्थळावरील स्किड मार्क्स व मलबा कसा हाताळाल?',
-        [O('तांत्रिक पथकाकडून मोजमाप व स्केच नकाशा तयार करून घ्या',1),
-         O('साध्या फोटोंनी काम भागते, मोजमापाची गरज नाही'),
-         O('मलबा लगेच रस्त्यावरून हटवून टाका, नोंद न ठेवता'),
-         O('स्किड मार्क्स नोंदवण्याची गरज नाही')],
-        'अचूक मोजमाप व स्केच वेग, दिशा व जबाबदारी निश्चित करण्यासाठी न्यायालयीन दृष्ट्या महत्त्वाचे तांत्रिक पुरावे आहेत.'),
-      mk('med','वाहनाचा मालक व चालक वेगवेगळे व्यक्ती असल्यास काय कराल?',
-        [O('फक्त चालकाचीच चौकशी करा, मालकाला सोडून द्या'),
-         O('दोघांचीही चौकशी करून मालकाची स्वतंत्र जबाबदारी (उदा. अवैध चालकाला वाहन दिले का) तपासा',1),
-         O('मालकाची कोणतीही जबाबदारी नसते असे गृहीत धरा'),
-         O('मालकावरच थेट गुन्हा नोंदवा, चालकाला सोडा')],
-        'वाहन मालकाची भूमिका (परवाना नसलेल्या व्यक्तीला वाहन देणे इ.) स्वतंत्रपणे तपासणे कायदेशीर जबाबदारी निश्चित करण्यासाठी आवश्यक आहे.'),
-      mk('med','विमा कंपनी व RTO यांना कधी कळवाल?',
-        [O('शक्य तितक्या लवकर कळवा जेणेकरून नुकसानभरपाई प्रक्रिया सुरू होईल',1),
-         O('तपास पूर्ण झाल्यावर काही महिन्यांनी कळवा'),
-         O('कळवण्याची गरज नाही, तक्रारदाराचे काम आहे'),
-         O('कोर्टाचा निकाल आल्यावरच कळवा')],
-        'लवकर सूचना दिल्याने तक्रारदाराला वेळेत नुकसानभरपाई मिळण्याची प्रक्रिया सुरू होते.'),
-      mk('hard','चालक "मी नशेत नव्हतो, वेगही कमी होता" असे सांगत पळून गेला होता पण नंतर स्वतःहून हजर होऊन माफी मागत आहे. काय कराल?',
-        [O('तो स्वतःहून हजर झाला व माफी मागत आहे, त्यामुळे प्रकरण समझोत्याने मिटवा'),
-         O('स्वतःहून हजर होणे हे सहकार्य मानून गुन्हा नोंदवूच नये'),
-         O('गुन्हा नोंदवा व वैद्यकीय/तांत्रिक पुराव्यांच्या आधारेच वेग व नशेचा दावा पडताळा',1),
-         O('तो स्वतःहून आला म्हणून जामीनपात्र कलमेच फक्त लावा, तपास न करता')],
-        'स्वतःहून हजर होणे सहकार्याची बाब असली तरी गुन्हा दाखल करणे व वस्तुनिष्ठ पुराव्यांनी दावे पडताळणे बंधनकारक आहे — मौखिक दाव्यावर विसंबणे चूक आहे.'),
-      mk('hard','गुन्हा नोंदवताना कोणती बाब लक्षात घ्याल?',
-        [O('फक्त मोटार वाहन कायद्याचा दंड आकारून प्रकरण निकाली काढा'),
-         O('मोटार वाहन कायदा व संबंधित BNS कलमांखाली गुन्हा नोंदवून विमा कंपनीलाही कळवा',1),
-         O('गुन्हा नोंदवू नका, फक्त समजूत काढा'),
-         O('विमा कंपनीला कळवण्याची गरज नाही')],
-        'गुन्हेगारी कायद्याखालील कलमांसोबत मोटार वाहन कायद्याच्या तरतुदी व विमा प्रक्रिया एकत्रितपणे हाताळल्याने तक्रारदाराला संपूर्ण न्याय व नुकसानभरपाई मिळते.'),
-      mk('hard','अपघातातील साक्षीदार परस्पर विरोधी माहिती देत आहेत — कोणाचा वेग जास्त होता याबाबत मतभेद आहेत. काय कराल?',
-        [O('जो जबाब तक्रारदाराच्या बाजूने आहे तोच स्वीकारा'),
-         O('प्रत्येकाचा स्वतंत्र जबाब घेऊन तांत्रिक पुराव्यांशी (CCTV/स्केच/स्किड मार्क्स) पडताळणी करा',1),
-         O('साक्षीदारांचे जबाब दुर्लक्षित करून फक्त चालकाच्या कबुलीवर अवलंबून राहा'),
-         O('साक्षीदारांना एकत्र बसवून एकच निष्कर्ष ठरवायला सांगा')],
-        'परस्परविरोधी साक्षींमध्ये वस्तुनिष्ठ तांत्रिक पुरावाच निर्णायक ठरतो — कोणत्याही एका बाजूची साक्ष आंधळेपणाने स्वीकारणे टाळावे.'),
-      mk('hard','आरोपी अल्पवयीन वाहनचालक निघाला. पुढे काय?',
-        [O('Juvenile Justice Act व Motor Vehicle Act दोन्हींखाली कारवाई करून पालकांचीही जबाबदारी तपासा',1),
-         O('अल्पवयीन असल्याने कोणतीही कारवाई करू नका'),
-         O('प्रौढांप्रमाणेच सर्वसाधारण प्रक्रिया वापरा'),
-         O('फक्त पालकांना दंड करून प्रकरण बंद करा')],
-        'अल्पवयीन चालकाच्या बाबतीत बाल न्याय कायदा व मोटार वाहन कायद्यातील तरतुदी एकत्रितपणे लागू होतात.'),
-      mk('hard','तक्रारदार भरपाईसाठी खासगी समझोता करून गुन्हा मागे घ्यायला सांगतो. काय कराल?',
-        [O('खासगी समझोता झाला असल्याने तपास तात्काळ थांबवा'),
-         O('गंभीर दखलपात्र गुन्हा खासगी समझोत्याने आपोआप रद्द होत नाही — कायदेशीर प्रक्रिया सुरूच ठेवा',1),
-         O('तक्रारदाराच्या इच्छेखातर FIR रद्द करा'),
-         O('समझोत्याची रक्कम पोलीस ठाण्यातच स्वीकारा')],
-        'गंभीर दखलपात्र अपघात-गुन्हा खासगी आर्थिक समझोत्याने संपत नाही — तो फक्त सक्षम न्यायालयाच्या प्रक्रियेद्वारेच निकाली निघू शकतो.')
+      {diff:'easy', q:'माहिती मिळताच सर्वोच्च प्राधान्य काय असावे?',
+       opts:[
+         {t:'आधी आरोपीचा शोध सुरू करा', c:false},
+         {t:'आधी पंचनामा पूर्ण करा, मग रुग्णालयाचा विचार करा', c:false},
+         {t:'जखमींना तात्काळ जवळच्या रुग्णालयात हलवणे ("गोल्डन अवर")', c:true},
+         {t:'वाहतूक पोलिसांना कळवून स्वतः थांबा', c:false}],
+       exp:'जीव वाचवणे हे प्रथम कर्तव्य आहे — "गोल्डन अवर" मध्ये उपचार मिळाल्यास मृत्यूचे प्रमाण मोठ्या प्रमाणात कमी होते; इतर सर्व प्रक्रिया यानंतर.'},
+      {diff:'easy', q:'घटनास्थळाचे व्यवस्थापन कसे कराल?',
+       opts:[
+         {t:'रस्ता लगेच मोकळा करून वाहतूक सुरू ठेवा', c:false},
+         {t:'क्षेत्र सुरक्षित करून पंचनामा करा व वाहतूक वळवा', c:true},
+         {t:'घटनास्थळ न पाहताच अहवाल लिहा', c:false},
+         {t:'साक्षीदार गोळा न करता निघून जा', c:false}],
+       exp:'पुरावा (टायरचे ठसे, तुटलेले भाग) जतन करण्यासाठी क्षेत्र सुरक्षित करून पंचनामा करणे आवश्यक आहे.'},
+      {diff:'med', q:'फरार वाहन/चालकाचा शोध कसा घ्याल?',
+       opts:[
+         {t:'फक्त तक्रारदाराच्या वर्णनावर अवलंबून राहा, तेच पुरेसे आहे', c:false},
+         {t:'जवळपासचे CCTV फुटेज, टोल नाका नोंदी व नंबर प्लेट डेटा तपासा', c:true},
+         {t:'शोध घेणे आवश्यक नाही, विमा कंपनी बघेल', c:false},
+         {t:'एका आठवड्यानंतर शोध सुरू करा, तोपर्यंत इतर कामे पूर्ण करा', c:false}],
+       exp:'तंत्रज्ञान-आधारित पुरावा (CCTV, ANPR, टोल डेटा) हा तपासाचा गाभा आहे — विलंब झाल्यास फुटेज डिलीट होण्याची शक्यता असते.'},
+      {diff:'hard', q:'चालक "मी नशेत नव्हतो, वेगही कमी होता" असे सांगत पळून गेला होता पण नंतर स्वतःहून ठाण्यात हजर झाला आणि माफी मागत आहे. काय कराल?',
+       opts:[
+         {t:'तो स्वतःहून हजर झाला व माफी मागत आहे, त्यामुळे प्रकरण समझोत्याने मिटवा', c:false},
+         {t:'स्वतःहून हजर होणे हे सहकार्य मानून गुन्हा नोंदवूच नये', c:false},
+         {t:'स्वतःहून हजर होणे नोंदवा, पण नियमानुसार गुन्हा दाखल करून वैद्यकीय/तांत्रिक पुराव्यांच्या आधारेच वेग व नशेचा दावा पडताळा — दाव्यावर विश्वास ठेवून सोडू नका', c:true},
+         {t:'तो स्वतःहून आला म्हणून जामीनपात्र कलमेच फक्त लावा, तपास न करता', c:false}],
+       exp:'स्वतःहून हजर होणे ही सहकार्याची बाब असली तरी गुन्हा दाखल करणे व वस्तुनिष्ठ पुराव्यांनी (मेडिकल टेस्ट, स्पीड डेटा) दावे पडताळणे बंधनकारक आहे. आरोपीच्या मौखिक दाव्यावर विसंबून कारवाई सौम्य करणे ही गंभीर चूक आहे.'},
+      {diff:'hard', q:'गुन्हा नोंदवताना कोणती बाब लक्षात घ्याल?',
+       opts:[
+         {t:'फक्त मोटार वाहन कायद्याचा दंड आकारून प्रकरण निकाली काढा, गुन्हेगारी कलमांची गरज नाही', c:false},
+         {t:'मोटार वाहन कायदा व संबंधित BNS कलमांखाली गुन्हा नोंदवून विमा कंपनीलाही कळवा', c:true},
+         {t:'गुन्हा नोंदवू नका, फक्त समजूत काढा', c:false},
+         {t:'विमा कंपनीला कळवण्याची गरज नाही, तो तक्रारदाराचा विषय आहे', c:false}],
+       exp:'गुन्हेगारी कायद्याखालील कलमांसोबत मोटार वाहन कायद्याच्या तरतुदी व विमा प्रक्रिया एकत्रितपणे हाताळल्याने तक्रारदाराला संपूर्ण न्याय व नुकसानभरपाई मिळते; केवळ दंड पुरेसा नाही.'},
+      {diff:'easy', q:'चालकाचा शोध सुरू असताना जखमींच्या नातेवाईकांशी कसा संवाद ठेवाल?',
+       opts:[
+         {t:'तपास पूर्ण होईपर्यंत नातेवाईकांशी संपर्क टाळा', c:false},
+         {t:'रुग्णालय व जखमींच्या स्थितीबाबत तात्काळ व संवेदनशीलपणे माहिती द्या', c:true},
+         {t:'फक्त तक्रार नोंदवून पुढे काहीही कळवू नका', c:false},
+         {t:'नातेवाईकांनीच रुग्णालयाशी संपर्क साधावा, पोलिसांची जबाबदारी नाही', c:false}],
+       exp:'संवेदनशील प्रसंगी तात्काळ व स्पष्ट माहिती दिल्याने नातेवाईकांचा पोलिसांवरील विश्वास टिकतो.'},
+      {diff:'med', q:'घटनास्थळाच्या पंचनाम्यात कोणत्या तांत्रिक बाबी काळजीपूर्वक नोंदवाल?',
+       opts:[
+         {t:'फक्त जखमी व्यक्तीचे नाव-पत्ता', c:false},
+         {t:'ब्रेक मार्क्स, वाहनाचे तुटलेले भाग, टायर ट्रॅक्स व अचूक मोजमाप', c:true},
+         {t:'रस्त्याचे नाव तेवढेच', c:false},
+         {t:'तांत्रिक बाबी आवश्यक नाहीत, फोटो पुरेसे', c:false}],
+       exp:'ब्रेक मार्क्स व तुटलेले भाग यावरून वेग व टक्करीची दिशा निश्चित करता येते — हे तांत्रिक विश्लेषणासाठी अत्यावश्यक आहे.'},
+      {diff:'hard', q:'वाहनमालक सांगतो, "गाडी माझी आहे पण चालवणारा नोकर होता, तो पळून गेला." काय कराल?',
+         opts:[
+         {t:'मालकाचे म्हणणे मान्य करून त्याला पूर्णपणे मोकळे सोडा', c:false},
+         {t:'मालकाचा जबाब नोंदवून नोकराचा शोध घ्या; मालकाला थेट दोषमुक्त न समजता साक्षीदार/सहआरोपी म्हणून योग्य चौकशी करा', c:true},
+         {t:'मालकावरच थेट खटला चालवा, अधिक चौकशीची गरज नाही', c:false},
+         {t:'दाव्याची शहानिशा न करता प्रकरण बंद करा', c:false}],
+       exp:'वाहनमालकाचा दावा पडताळल्याशिवाय स्वीकारणे धोकादायक आहे — चालकाची ओळख, नोकरीचा पुरावा व मालकाची जबाबदारी (काही प्रकरणी वाहन नोंदणी/विमा जबाबदारी) स्वतंत्रपणे तपासणे आवश्यक आहे.'}
     ]
   },
   {
-    id:'domestic', fileNo:'फाईल क्र. ०३', icon:'🏠', title:'घरगुती हिंसाचार', type:'महिला सुरक्षा विषयक गुन्हा',
+    id:'domestic', icon:'🏠', tab:'फाईल क्र. ०३', title:'घरगुती हिंसाचार', type:'महिला सुरक्षा विषयक गुन्हा',
     desc:'एक महिला पतीच्या कुटुंबाकडून होणाऱ्या छळाची तक्रार घेऊन येते.',
+    brief:'एक विवाहित महिला घाबरलेल्या व अस्वस्थ अवस्थेत पोलीस ठाण्यात येते. ती सांगते की गेल्या काही महिन्यांपासून पतीचे कुटुंबीय तिला शारीरिक व मानसिक त्रास देत आहेत, आणि आजही तिला मारहाण झाली आहे. तिच्यासोबत एक लहान मूलही आहे. ही केस संवेदनशील असून कायदेशीर प्रक्रियेसोबतच सहानुभूतीही तितकीच महत्त्वाची आहे.',
     steps:[
-      mk('easy','तक्रार ऐकताना सर्वात योग्य दृष्टिकोन कोणता?',
-        [O('तक्रार घाईघाईत, सार्वजनिक ठिकाणी नोंदवा'),
-         O('संयमाने, गोपनीयतेने व शक्य असल्यास महिला अधिकाऱ्याच्या उपस्थितीत तक्रार नोंदवा',1),
-         O('तक्रारदारास घरगुती बाब सांगून परत पाठवा'),
-         O('थेट आरोपीला बोलावून समोरासमोर बसवा')],
-        'संवेदनशील प्रकरणांत तक्रारदाराला सुरक्षित व आदराने वाटेल असे वातावरण देणे आवश्यक आहे.'),
-      mk('easy','शारीरिक इजा झाली असल्यास काय करावे?',
-        [O('वैद्यकीय तपासणीची गरज नाही, फक्त नोंद पुरेशी'),
-         O('फक्त तोंडी विचारून नोंद करा'),
-         O('वैद्यकीय तपासणी करवून अहवाल नोंदीत जोडा',1),
-         O('तपासणी आरोपीच्या संमतीनंतरच करा')],
-        'वैद्यकीय अहवाल हा पुराव्याचा महत्त्वाचा भाग आहे व तक्रारीला बळकटी देतो; तो आरोपीच्या संमतीवर अवलंबून नसतो.'),
-      mk('easy','घरात लहान मुले उपस्थित असल्यास काय लक्षात घ्याल?',
-        [O('मुलांचा काही संबंध नाही असे मानून दुर्लक्ष करा'),
-         O('गरज भासल्यास मुलांच्या मानसिक आधारासाठी बाल कल्याण समितीशी संपर्क साधा',1),
-         O('मुलांची चौकशी करून त्यांनाच साक्षीदार बनवा'),
-         O('मुलांना तात्काळ पालकांपासून वेगळे करा')],
-        'घरगुती हिंसाचाराचा परिणाम मुलांवरही होतो — गरजेनुसार संवेदनशीलपणे बाल कल्याण यंत्रणेची मदत घ्यावी.'),
-      mk('easy','तक्रारदारास तिच्या कायदेशीर हक्कांची माहिती कशी द्याल?',
-        [O('DV Act अंतर्गत उपलब्ध पर्याय (संरक्षण आदेश, निवास हक्क, निवारा) समजावून सांगा',1),
-         O('कायदेशीर माहिती देणे पोलिसांचे काम नाही'),
-         O('फक्त वकिलाकडे जायला सांगा'),
-         O('माहिती दिल्यास तक्रारदार घाबरेल म्हणून काहीच सांगू नका')],
-        'तक्रारदाराला उपलब्ध कायदेशीर पर्यायांची माहिती देणे तिला माहितीपूर्ण निर्णय घेण्यास मदत करते.'),
-      mk('easy','तक्रारदाराचा पत्ता व सुरक्षिततेबाबतची माहिती कशी हाताळाल?',
-        [O('गोपनीय ठेवा, आवश्यकतेशिवाय उघड करू नका',1),
-         O('सर्व कागदपत्रांत उघडपणे नमूद करा'),
-         O('आरोपी पक्षाला विनंती केल्यास द्या'),
-         O('गोपनीयतेची गरज नाही')],
-        'संवेदनशील वैयक्तिक माहिती गोपनीय ठेवणे तक्रारदाराच्या सुरक्षिततेसाठी आवश्यक आहे.'),
-      mk('med','तात्काळ आधार देण्यासाठी कोणाशी समन्वय साधाल?',
-        [O('संरक्षण अधिकारी (Protection Officer) व जवळील समुपदेशन/मदत केंद्राशी संपर्क साधा',1),
-         O('फक्त कौटुंबिक ज्येष्ठांना बोलावून समजूत घाला'),
-         O('कोणाशीही संपर्क साधू नका, तक्रारदारावर सोडा'),
-         O('प्रकरण पूर्णपणे कुटुंबावर सोडा')],
-        'घरगुती हिंसाचार कायद्यांतर्गत संरक्षण अधिकारी व मदत केंद्रे कायदेशीर व मानसिक आधार देण्यासाठी उपलब्ध असतात.'),
-      mk('med','तक्रारदारास तात्पुरता निवारा हवा असल्यास काय कराल?',
-        [O('गरज भासल्यास तात्पुरता निवारागृह पर्याय उपलब्ध करून द्या',1),
-         O('निवारा उपलब्ध करून देणे पोलिसांचे काम नाही'),
-         O('तिला माहेरीच जायला सांगा, अन्य पर्याय सांगू नका'),
-         O('निवारा हवा असल्यास स्वतः शोधायला सांगा')],
-        'सुरक्षिततेस धोका असल्यास तात्पुरता निवारा उपलब्ध करून देणे किंवा त्यासाठी योग्य यंत्रणेशी जोडणे आवश्यक आहे.'),
-      mk('med','आरोपी पक्षाकडून धमकी मिळाल्याचे तक्रारदार सांगते. काय कराल?',
-        [O('धमकीकडे दुर्लक्ष करा, ती फक्त बोलण्यापुरती असते'),
-         O('धमकीचा स्वतंत्र जबाब नोंदवून तक्रारदारास योग्य संरक्षण द्या',1),
-         O('धमकी दिली हे सिद्ध होईपर्यंत काहीही करू नका'),
-         O('तक्रारदारालाच आरोपीशी थेट बोलून मिटवायला सांगा')],
-        'धमकीची गंभीर दखल घेऊन स्वतंत्र नोंद व आवश्यक संरक्षण उपाय तात्काळ पुरवणे आवश्यक आहे.'),
-      mk('med','संयुक्त कुटुंबातील अनेक सदस्यांवर आरोप असल्यास काय कराल?',
-        [O('सर्व कुटुंबसदस्यांना सरसकट आरोपी करा'),
-         O('प्रत्येकाची भूमिका स्वतंत्रपणे तपासून पुराव्यानुसार निर्णय घ्या',1),
-         O('फक्त पतीलाच आरोपी करा, इतरांना वगळा'),
-         O('कुटुंबातील ज्येष्ठ व्यक्तीलाच जबाबदार धरा')],
-        'प्रत्येक व्यक्तीची सहभागाची पातळी वेगळी असू शकते — पुराव्याशिवाय सरसकट सर्वांना गोवणे किंवा एकालाच जबाबदार धरणे दोन्ही चुकीचे आहे.'),
-      mk('med','आर्थिक छळाचा दावा असल्यास पुरावा कसा तपासाल?',
-        [O('आर्थिक कागदपत्रे व बँक व्यवहार तपासा',1),
-         O('आर्थिक छळ हा गुन्हा मानला जात नाही म्हणून दुर्लक्ष करा'),
-         O('फक्त तोंडी दाव्यावर विश्वास ठेवा'),
-         O('आर्थिक तपासणी वकिलाचे काम आहे, पोलिसांचे नाही')],
-        'आर्थिक छळ हा घरगुती हिंसाचाराचाच एक प्रकार मानला जातो — कागदोपत्री पुराव्यांनी तो तपासणे आवश्यक आहे.'),
-      mk('hard','तक्रारदार घाबरून "मला गुन्हा नको, फक्त समज द्या" असे म्हणते, पण तिच्या अंगावर स्पष्ट गंभीर जखमा आहेत. काय कराल?',
-        [O('तिच्या इच्छेचा आदर करून फक्त तोंडी समज देऊन प्रकरण नोंदीशिवाय बंद करा'),
-         O('तिच्या इच्छेविरुद्ध जाऊन कुटुंबियांना तात्काळ अटक करून टाका'),
-         O('गंभीर दखलपात्र इजा असल्यास गुन्हा नोंदवणे बंधनकारक आहे — तिला प्रक्रिया व सुरक्षा पर्याय समजावून संवेदनशीलतेने नोंद घ्या',1),
-         O('तिला परत पाठवून दोन दिवसांनी निर्णय घ्यायला सांगा')],
-        'गंभीर दखलपात्र गुन्ह्यात तक्रारदाराच्या भीतीमुळे नोंदणी टाळणे कायद्याचे उल्लंघन आहे. तिला जबरदस्ती न करता विश्वासात घेऊन पुढे जाणे आवश्यक.'),
-      mk('hard','औपचारिक गुन्हा नोंदवल्यानंतर पुढे काय?',
-        [O('नोंद झाल्यावर प्रकरण तक्रारदारावर सोडून द्या'),
-         O('नियमित पाठपुरावा करून तपास पूर्ण करा व तक्रारदारास प्रगती कळवत राहा',1),
-         O('तक्रारदाराशी पुन्हा संपर्क साधू नका'),
-         O('आरोपी पक्षाकडून समझोत्याचा प्रस्ताव आल्यास तपास आपोआप थांबवा')],
-        'सातत्यपूर्ण पाठपुरावा व संवाद ठेवल्याने तपासाची विश्वासार्हता टिकते; खासगी समझोत्याने दखलपात्र गुन्ह्याचा तपास आपोआप थांबत नाही.'),
-      mk('hard','आरोपी बाजूकडून खोटी प्रति-तक्रार (काउंटर-कम्प्लेंट) दाखल केली जाते. काय कराल?',
-        [O('मूळ तक्रारदारावरच संशय घेऊन तिचीच तक्रार बाजूला ठेवा'),
-         O('दोन्ही तक्रारींची स्वतंत्र व निष्पक्ष चौकशी करा, घाईने निष्कर्ष काढू नका',1),
-         O('दोन्ही तक्रारी एकत्र करून एकच निर्णय द्या'),
-         O('प्रति-तक्रार आली म्हणून मूळ तक्रार रद्द करा')],
-        'प्रति-तक्रार ही अनेकदा दबावाची रणनीती असू शकते — दोन्ही बाजूंची स्वतंत्र, निष्पक्ष व पुराव्यावर आधारित चौकशी करणे आवश्यक आहे.'),
-      mk('hard','तक्रारदार तक्रार मागे घेण्यासाठी दबावाखाली असल्याचे जाणवते. काय कराल?',
-        [O('तिने स्वतः मागे घेण्याची इच्छा दाखवली म्हणून लगेच प्रकरण बंद करा'),
-         O('आरोपीच्या अनुपस्थितीत एकांतात बोलून खरी परिस्थिती व तिची खरी इच्छा जाणून घ्या',1),
-         O('तिच्या निर्णयाची शहानिशा न करता जसेच्या तसे नोंदवा'),
-         O('कुटुंबियांना बोलावून तिच्यासमोर निर्णय घ्यायला सांगा')],
-        'दबावाखाली घेतलेला निर्णय खरी इच्छा दर्शवत नसू शकतो — आरोपीच्या अनुपस्थितीत मोकळेपणाने बोलून खात्री करणे आवश्यक आहे.'),
-      mk('hard','वरिष्ठांकडून "कौटुंबिक बाब आहे, मिटवा" असा अनौपचारिक सल्ला मिळतो. काय कराल?',
-        [O('वरिष्ठांचा सल्ला मानून गुन्हा नोंदवूच नका'),
-         O('कायद्याचे पालन प्राधान्याने करा — गंभीर दखलपात्र गुन्हा नोंदवणे बंधनकारक आहे',1),
-         O('वरिष्ठांना नाराज करण्यापेक्षा तक्रारदारास परत पाठवा'),
-         O('निर्णय पूर्णपणे वरिष्ठांवर सोडा')],
-        'अनौपचारिक सल्ला कायद्याच्या बंधनकारक तरतुदींपेक्षा वरचढ ठरू शकत नाही — दखलपात्र गुन्हा नोंदवणे हे कायदेशीर कर्तव्य आहे.')
+      {diff:'easy', q:'तक्रार ऐकताना सर्वात योग्य दृष्टिकोन कोणता?',
+       opts:[
+         {t:'तक्रार घाईघाईत, सार्वजनिक ठिकाणी नोंदवा', c:false},
+         {t:'संयमाने, गोपनीयतेने व शक्य असल्यास महिला अधिकाऱ्याच्या उपस्थितीत तक्रार नोंदवा', c:true},
+         {t:'तक्रारदारास घरगुती बाब सांगून परत पाठवा', c:false},
+         {t:'थेट आरोपीला बोलावून समोरासमोर बसवा', c:false}],
+       exp:'संवेदनशील प्रकरणांत तक्रारदाराला सुरक्षित व आदराने वाटेल असे वातावरण देणे आवश्यक आहे.'},
+      {diff:'easy', q:'शारीरिक इजा झाली असल्यास काय करावे?',
+       opts:[
+         {t:'वैद्यकीय तपासणीची गरज नाही, फक्त नोंद पुरेशी', c:false},
+         {t:'फक्त तोंडी विचारून नोंद करा', c:false},
+         {t:'वैद्यकीय तपासणी करवून अहवाल नोंदीत जोडा', c:true},
+         {t:'तपासणी आरोपीच्या संमतीनंतरच करा', c:false}],
+       exp:'वैद्यकीय अहवाल हा पुराव्याचा महत्त्वाचा भाग आहे व तक्रारीला बळकटी देतो; तो आरोपीच्या संमतीवर अवलंबून नसतो.'},
+      {diff:'med', q:'तात्काळ आधार देण्यासाठी कोणाशी समन्वय साधाल?',
+       opts:[
+         {t:'संरक्षण अधिकारी (Protection Officer) व जवळील समुपदेशन/मदत केंद्राशी संपर्क साधा', c:true},
+         {t:'फक्त कौटुंबिक ज्येष्ठांना बोलावून समजूत घाला', c:false},
+         {t:'कोणाशीही संपर्क साधू नका, तक्रारदारावर सोडा', c:false},
+         {t:'प्रकरण पूर्णपणे कुटुंबावर सोडा', c:false}],
+       exp:'घरगुती हिंसाचार कायद्यांतर्गत संरक्षण अधिकारी व मदत केंद्रे कायदेशीर व मानसिक आधार देण्यासाठी उपलब्ध असतात — कौटुंबिक "समजूत" पुरेशी नसते.'},
+      {diff:'hard', q:'तक्रारदार घाबरून "मला गुन्हा नको, फक्त समज द्या" असे म्हणते, पण तिच्या अंगावर स्पष्ट गंभीर जखमा आहेत. काय कराल?',
+       opts:[
+         {t:'तिच्या इच्छेचा आदर करून फक्त तोंडी समज देऊन प्रकरण नोंदीशिवाय बंद करा', c:false},
+         {t:'तिच्या इच्छेविरुद्ध जाऊन कुटुंबियांना अटक करून टाका', c:false},
+         {t:'गंभीर दखलपात्र इजा असल्यास कायद्याने गुन्हा नोंदवणे बंधनकारक आहे — तिला प्रक्रिया व सुरक्षा पर्याय समजावून सांगत, संवेदनशीलतेने नोंद घ्या', c:true},
+         {t:'तिला परत पाठवून दोन दिवसांनी निर्णय घ्यायला सांगा', c:false}],
+       exp:'गंभीर दखलपात्र गुन्ह्यात तक्रारदाराच्या भीतीमुळे नोंदणी टाळणे कायद्याचे उल्लंघन आहे. मात्र तिला जबरदस्ती न करता, प्रक्रिया व संरक्षण पर्याय (निवारा, समुपदेशन) समजावून विश्वासात घेऊन पुढे जाणे आवश्यक आहे.'},
+      {diff:'hard', q:'औपचारिक गुन्हा नोंदवल्यानंतर पुढे काय?',
+       opts:[
+         {t:'नोंद झाल्यावर प्रकरण तक्रारदारावर सोडून द्या', c:false},
+         {t:'नियमित पाठपुरावा करून तपास पूर्ण करा व तक्रारदारास प्रगती कळवत राहा', c:true},
+         {t:'तक्रारदाराशी पुन्हा संपर्क साधू नका, ती स्वतः विचारेल', c:false},
+         {t:'आरोपी पक्षाकडून समझोत्याचा प्रस्ताव आल्यास तपास आपोआप थांबवा', c:false}],
+       exp:'सातत्यपूर्ण पाठपुरावा व संवाद ठेवल्याने तपासाची विश्वासार्हता टिकते; खासगी समझोत्याने दखलपात्र गुन्ह्याचा तपास आपोआप थांबत नाही.'},
+      {diff:'easy', q:'तक्रारदारासोबत आलेल्या लहान मुलांची उपस्थिती असल्यास काय कराल?',
+       opts:[
+         {t:'मुलांनाही तक्रारीच्या सर्व तपशिलांसमोर बसू द्या, फरक पडत नाही', c:false},
+         {t:'मुलांना वेगळ्या सुरक्षित जागी बसवून, त्यांच्यासमोर संवेदनशील तपशील चर्चा न करता तक्रार नोंदवा', c:true},
+         {t:'मुलांना घरी परत पाठवायला सांगा, त्यांची काळजी पोलिसांची जबाबदारी नाही', c:false},
+         {t:'मुलांनाच घटनेबद्दल प्रश्न विचारून जबाब घ्या', c:false}],
+       exp:'मुलांच्या मानसिक सुरक्षिततेची काळजी घेणे व त्यांना संवेदनशील तपशिलांपासून दूर ठेवणे ही जबाबदार व सहानुभूतीपूर्ण कार्यपद्धती आहे.'},
+      {diff:'med', q:'तक्रारदारास तात्पुरता निवारा (shelter) हवा असल्यास काय कराल?',
+       opts:[
+         {t:'निवारा व्यवस्था पोलिसांच्या अखत्यारीत येत नाही असे सांगून दुर्लक्ष करा', c:false},
+         {t:'संबंधित निवारा गृह व संरक्षण अधिकाऱ्यामार्फत तात्पुरत्या निवाऱ्याची व्यवस्था करण्यास मदत करा', c:true},
+         {t:'तिला स्वतःच व्यवस्था शोधायला सांगा', c:false},
+         {t:'आरोपीच्याच घरी थांबण्याचा सल्ला द्या', c:false}],
+       exp:'घरगुती हिंसाचार कायद्यांतर्गत निवारा गृह व संरक्षण अधिकारी यांची मदत तक्रारदाराच्या तात्काळ सुरक्षिततेसाठी उपलब्ध करून देणे आवश्यक आहे.'},
+      {diff:'hard', q:'आरोपी पक्षाकडून प्रकरण दाबण्यासाठी राजकीय/वरिष्ठ पातळीवरून दबाव येतो. काय कराल?',
+       opts:[
+         {t:'दबावापुढे झुकून तक्रार सौम्य करा किंवा नोंदच घेऊ नका', c:false},
+         {t:'दबावाला बळी न पडता नियमानुसार व निष्पक्षपणे तपास सुरू ठेवा आणि दबावाची बाब लेखी स्वरूपात वरिष्ठांना कळवा', c:true},
+         {t:'दबाव आणणाऱ्यांशी स्वतःच वाटाघाटी करून तडजोड घडवा', c:false},
+         {t:'प्रकरण दुसऱ्या ठाण्याकडे वर्ग करून जबाबदारी टाळा', c:false}],
+       exp:'अनुचित दबावापुढे झुकणे कायद्याचे उल्लंघन आहे — निष्पक्ष तपास सुरू ठेवत, दबावाची नोंद लेखी स्वरूपात वरिष्ठांकडे करणे ही योग्य व स्वतःचे संरक्षण करणारी पद्धत आहे.'}
     ]
   },
   {
-    id:'cyber', fileNo:'फाईल क्र. ०४', icon:'💻', title:'सायबर फसवणूक', type:'सायबर गुन्हा',
+    id:'cyber', icon:'💻', tab:'फाईल क्र. ०४', title:'सायबर फसवणूक', type:'सायबर गुन्हा',
     desc:'एका नागरिकाच्या बँक खात्यातून ऑनलाइन फसवणुकीद्वारे पैसे वजा झाले.',
+    brief:'एका नागरिकाला अनोळखी नंबरवरून फोन येतो — बोलणारा स्वतःला बँक अधिकारी असल्याचे सांगून OTP मागतो. काही मिनिटांतच त्याच्या बँक खात्यातून मोठी रक्कम परस्पर वजा होते. घाबरलेला तक्रारदार तात्काळ सायबर सेलकडे धाव घेतो. वेळेवर योग्य कारवाई झाली तरच पैसे परत मिळण्याची शक्यता असते.',
     steps:[
-      mk('easy','तक्रारदाराकडून सर्वप्रथम काय गोळा कराल?',
-        [O('फक्त तोंडी माहिती'),
-         O('आरोपीचे नाव आधी विचारा'),
-         O('व्यवहाराचे स्क्रीनशॉट्स, ट्रान्झॅक्शन आयडी व बँक स्टेटमेंट',1),
-         O('काहीही गोळा करण्याची गरज नाही, बँक सर्व करेल')],
-        'डिजिटल व्यवहाराचे तपशील (transaction ID, वेळ, खाते क्रमांक) हे तपासाची दिशा ठरवणारे प्राथमिक पुरावे आहेत.'),
-      mk('easy','पैसे परत मिळण्याची शक्यता वाढवण्यासाठी कोणती तात्काळ कृती आवश्यक?',
-        [O('काही दिवस वाट पाहून मग तक्रार नोंदवा'),
-         O('फक्त स्थानिक ठाण्यात तोंडी सांगून थांबा'),
-         O('तक्रारदारालाच बँकेशी बोलायला सांगा'),
-         O('नॅशनल सायबर क्राइम पोर्टल/१९३० हेल्पलाइनवर नोंद करून बँकेला त्वरित कळवून व्यवहार गोठवण्याची विनंती करा',1)],
-        'सायबर फसवणुकीत "गोल्डन अवर" तत्त्व लागू होते — जितक्या लवकर बँकेला कळवाल तितकी पैसे गोठवण्याची शक्यता जास्त.'),
-      mk('easy','तक्रारदाराचा मोबाईल/सिम बदलला असल्यास काय कराल?',
-        [O('जुना नंबर व त्यावरील डेटा जपून ठेवण्यास सांगा',1),
-         O('जुन्या नंबरचा काही उपयोग नाही असे समजा'),
-         O('जुना नंबर विसरून नवीन नंबरवरच तपास करा'),
-         O('सिम बदलल्याने तपास अशक्य होतो असे सांगा')],
-        'जुन्या नंबरवरील मेसेज व कॉल लॉग महत्त्वाचे डिजिटल पुरावे असू शकतात.'),
-      mk('easy','तक्रारदाराला OTP शेअर केला होता का हे का विचारावे?',
-        [O('त्याला दोष देण्यासाठी'),
-         O('घटनाक्रम नेमका समजून घेण्यासाठी, दोषारोपासाठी नाही',1),
-         O('OTP शेअर केला असल्यास गुन्हाच नोंदवू नये'),
-         O('हा प्रश्न विचारण्याची गरजच नाही')],
-        'OTP शेअर झाला असला तरी फसवणुकीचा गुन्हा कायम राहतो — प्रश्न फक्त घटनाक्रम समजण्यासाठी विचारला जातो, तक्रारदारास दोष देण्यासाठी नाही.'),
-      mk('easy','फसवणुकीचा नेमका प्रकार (फिशिंग/लॉटरी/जॉब फ्रॉड) ओळखणे का महत्त्वाचे?',
-        [O('प्रकारानुसार तपासाची दिशा व स्रोत ठरवण्यासाठी',1),
-         O('प्रकार महत्त्वाचा नाही, सर्व सारखेच हाताळावे'),
-         O('प्रकार ओळखणे फक्त अहवालासाठी आवश्यक आहे'),
-         O('प्रकार ओळखणे तक्रारदाराचे काम आहे')],
-        'फसवणुकीचा प्रकार समजल्याने संबंधित प्लॅटफॉर्म, पॅटर्न व संभाव्य टोळी ओळखणे सोपे होते.'),
-      mk('med','डिजिटल पुरावा (चॅट्स, ईमेल, कॉल रेकॉर्ड) कसा हाताळाल?',
-        [O('BSA अंतर्गत वैध ठरेल अशा पद्धतीने मूळ स्वरूपात जतन व प्रमाणित करा',1),
-         O('डिजिटल पुरावा न्यायालयात चालत नाही असे समजून दुर्लक्ष करा'),
-         O('फक्त स्क्रीनशॉट पुरेसा आहे, मूळ डेटा जतन करण्याची गरज नाही'),
-         O('पुरावा जतन करण्याची घाई करू नका')],
-        'Bharatiya Sakshya Adhiniyam अंतर्गत डिजिटल पुरावा वैध आहे, पण तो योग्य पद्धतीने जतन केला तरच न्यायालयात टिकतो.'),
-      mk('med','बँक/टेलिकॉम कंपनीकडून माहिती कशी मागवाल?',
-        [O('अधिकृत पत्राद्वारे संबंधित बँक/टेलिकॉमकडून व्यवहार व सिम नोंदी मागवा',1),
-         O('अनौपचारिक फोन कॉलवरच माहिती मागवा'),
-         O('माहिती मागवण्याची गरज नाही, तक्रारदारच मागवेल'),
-         O('माहिती मागवण्यास बराच वेळ थांबा')],
-        'अधिकृत लेखी विनंतीद्वारे मिळालेली माहिती कायदेशीरदृष्ट्या ग्राह्य असते व तपासाला दिशा देते.'),
-      mk('med','बनावट वेबसाईट/अॅपद्वारे फसवणूक झाल्यास काय कराल?',
-        [O('सायबर सेल व संबंधित प्लॅटफॉर्म/होस्टिंग कंपनीला कळवून ती बंद करण्याची प्रक्रिया सुरू करा',1),
-         O('वेबसाईटकडे दुर्लक्ष करा, ती आपोआप बंद होईल'),
-         O('फक्त तक्रारदारास सावध राहायला सांगा'),
-         O('वेबसाईट बंद करण्याचे अधिकार पोलिसांना नाहीत असे मानून थांबा')],
-        'सायबर सेलच्या मदतीने बनावट प्लॅटफॉर्म ब्लॉक/बंद करणे इतर संभाव्य पीडितांना वाचवण्यासाठी महत्त्वाचे आहे.'),
-      mk('med','आरोपी आंतरराज्यीय/आंतरराष्ट्रीय असल्याचे समजल्यास काय कराल?',
-        [O('स्थानिक हद्दीबाहेर आहे म्हणून तपास थांबवा'),
-         O('संबंधित राज्य सायबर सेल/केंद्रीय यंत्रणांशी समन्वय साधा',1),
-         O('तक्रारदारालाच त्या राज्यात जाऊन तक्रार करायला सांगा'),
-         O('आंतरराष्ट्रीय आरोपी असल्यास गुन्हा नोंदवूच नये')],
-        'सायबर गुन्ह्यांत भौगोलिक हद्द ओलांडणे सामान्य आहे — योग्य यंत्रणांशी समन्वय साधूनच तपास पुढे नेता येतो.'),
-      mk('med','अनेक तक्रारदार समान पद्धतीने फसवले गेल्याचे लक्षात आल्यास काय कराल?',
-        [O('प्रत्येक तक्रार वेगळी व असंबंधित मानून स्वतंत्रपणे हाताळा'),
-         O('पॅटर्न ओळखून एकत्रित संघटित फसवणूक (organized fraud) म्हणून तपास करा',1),
-         O('सर्वात मोठी रक्कम गमावलेल्या तक्रारदारालाच प्राधान्य द्या'),
-         O('पॅटर्न दुर्लक्षित करून प्रत्येक प्रकरण वेगळे बंद करा')],
-        'समान पद्धत ओळखल्याने संघटित टोळी उघड होण्याची व मुख्य सूत्रधारापर्यंत पोहोचण्याची शक्यता वाढते.'),
-      mk('hard','तक्रारदार सांगतो की त्याने आरोपीला UPI वर स्वतःहून पैसे पाठवले, कारण त्याला "बक्षीस" जिंकल्याचा फोन आला होता. हे फसवणुकीचा गुन्हा ठरते का?',
-        [O('नाही — तक्रारदाराने स्वतःहून पैसे पाठवले, ती त्याची स्वतःची चूक आहे'),
-         O('होय — फसव्या आमिषाने पैसे उकळणे कायद्याने फसवणुकीचा गुन्हा ठरते, संमतीने पाठवले तरी',1),
-         O('फक्त बँकेकडे तक्रार करावी, पोलिसांत गुन्हा नोंदवण्याची गरज नाही'),
-         O('रक्कम कमी असल्यास दुर्लक्ष करावे')],
-        '"संमतीने पैसे दिले" हे वरवर दिसते — फसव्या बतावणीने संमती मिळवली असल्याने कायद्याने ती फसवणूकच ठरते.'),
-      mk('hard','तांत्रिक तपासासाठी व आरोपी सापडल्यानंतर पुढील कायदेशीर टप्पा?',
-        [O('संबंधित बँक/टेलिकॉमकडून माहिती मागवून, नियमानुसार अटक/नोटीस प्रक्रिया पूर्ण करून आरोपपत्र दाखल करा',1),
-         O('आरोपी लहान रकमेसाठी पकडला असल्याने फक्त समज देऊन सोडून द्या'),
-         O('तक्रारदारालाच आरोपीशी समेट घडवायला सांगा'),
-         O('बँकेने पैसे परत दिल्यास गुन्हा आपोआप रद्द होतो असे समजून प्रकरण बंद करा')],
-        'पैसे परत मिळाले तरी दखलपात्र फसवणुकीचा गुन्हा कायम राहतो — योग्य पुराव्यांसह कायदेशीर प्रक्रिया पूर्ण करणे आवश्यक आहे.'),
-      mk('hard','तक्रारदार स्वतः OTP शेअर केल्याने बँक जबाबदारी नाकारते. यामुळे पोलीस तपासावर काय परिणाम होतो?',
-        [O('बँकेने जबाबदारी नाकारली म्हणून पोलिसांनीही गुन्हा नोंदवू नये'),
-         O('बँकेचा नकार व फौजदारी तपास हे स्वतंत्र विषय आहेत — गुन्हा नोंदवून तपास सुरूच ठेवा',1),
-         O('तक्रारदारावरच निष्काळजीपणाचा गुन्हा नोंदवा'),
-         O('बँकेच्या निर्णयाला आव्हान देणे पोलिसांचे काम नाही, प्रकरण बंद करा')],
-        'बँकेचा परतावा-नकार हा दिवाणी/धोरणात्मक विषय आहे; फसवणुकीचा फौजदारी गुन्हा त्यापासून स्वतंत्र असून त्याचा तपास सुरूच ठेवावा लागतो.'),
-      mk('hard','क्रिप्टोकरन्सीद्वारे पैसे वळवले गेल्याचे समजते. काय कराल?',
-        [O('क्रिप्टो ट्रेस करणे अशक्य आहे असे मानून तपास थांबवा'),
-         O('विशेष सायबर/आर्थिक गुन्हे शाखेची मदत घेऊन वॉलेट अॅड्रेस व एक्सचेंज ट्रेस करा',1),
-         O('तक्रारदारालाच क्रिप्टो एक्स्चेंजशी बोलायला सांगा'),
-         O('क्रिप्टोकरन्सी बेकायदेशीर आहे असे सांगून तक्रार नाकारा')],
-        'क्रिप्टो व्यवहार पूर्णपणे अनोळखी नसतात — विशेष तांत्रिक कौशल्य व एक्सचेंजच्या सहकार्याने वॉलेट ट्रेस करता येते.'),
-      mk('hard','पकडलेला आरोपी फक्त "मनी म्युल" (भाड्याने खाते दिलेला) निघाला. काय कराल?',
-        [O('खातेधारकालाच मुख्य सूत्रधार समजून तपास बंद करा'),
-         O('मुख्य सूत्रधार वेगळा असू शकतो हे लक्षात घेऊन संपूर्ण आर्थिक साखळी पुढे तपासा',1),
-         O('खातेधारकाला काहीही माहीत नसेल असे गृहीत धरून सोडून द्या'),
-         O('एका अटकेवर समाधान मानून प्रकरण निकाली काढा')],
-        '"मनी म्युल" हा साखळीतील एक भाग असतो — मुख्य सूत्रधारापर्यंत पोहोचण्यासाठी संपूर्ण आर्थिक व्यवहार साखळी तपासणे आवश्यक आहे.')
+      {diff:'easy', q:'तक्रारदाराकडून सर्वप्रथम काय गोळा कराल?',
+       opts:[
+         {t:'फक्त तोंडी माहिती', c:false},
+         {t:'आरोपीचे नाव आधी विचारा', c:false},
+         {t:'व्यवहाराचे स्क्रीनशॉट्स, ट्रान्झॅक्शन आयडी व बँक स्टेटमेंट', c:true},
+         {t:'काहीही गोळा करण्याची गरज नाही, बँक सर्व करेल', c:false}],
+       exp:'डिजिटल व्यवहाराचे तपशील (transaction ID, वेळ, खाते क्रमांक) हे तपासाची दिशा ठरवणारे प्राथमिक पुरावे आहेत.'},
+      {diff:'easy', q:'पैसे परत मिळण्याची शक्यता वाढवण्यासाठी कोणती तात्काळ कृती आवश्यक?',
+       opts:[
+         {t:'काही दिवस वाट पाहून मग तक्रार नोंदवा', c:false},
+         {t:'फक्त स्थानिक ठाण्यात तोंडी सांगून थांबा', c:false},
+         {t:'तक्रारदारालाच बँकेशी बोलायला सांगा, पोलिसांनी हस्तक्षेप करू नये', c:false},
+         {t:'नॅशनल सायबर क्राइम पोर्टल/१९३० हेल्पलाइनवर नोंद करून बँकेला त्वरित कळवून व्यवहार गोठवण्याची विनंती करा', c:true}],
+       exp:'सायबर फसवणुकीत "गोल्डन अवर" तत्त्व लागू होते — जितक्या लवकर बँकेला कळवाल तितकी पैसे गोठवण्याची शक्यता जास्त.'},
+      {diff:'med', q:'डिजिटल पुरावा (चॅट्स, ईमेल, कॉल रेकॉर्ड) कसा हाताळाल?',
+       opts:[
+         {t:'BSA अंतर्गत वैध ठरेल अशा पद्धतीने मूळ स्वरूपात जतन व प्रमाणित करा', c:true},
+         {t:'डिजिटल पुरावा न्यायालयात चालत नाही असे समजून दुर्लक्ष करा', c:false},
+         {t:'फक्त स्क्रीनशॉट पुरेसा आहे, मूळ डेटा जतन करण्याची गरज नाही', c:false},
+         {t:'पुरावा जतन करण्याची घाई करू नका, नंतर बघू', c:false}],
+       exp:'Bharatiya Sakshya Adhiniyam अंतर्गत डिजिटल पुरावा वैध आहे, पण तो योग्य पद्धतीने (प्रमाणपत्रासह) जतन केला तरच न्यायालयात टिकतो — केवळ स्क्रीनशॉट पुरेसा नाही.'},
+      {diff:'hard', q:'तक्रारदार सांगतो की त्याने आरोपीला UPI वर स्वतःहून पैसे पाठवले, कारण त्याला "बक्षीस" जिंकल्याचा फोन आला होता. हे फसवणुकीचा गुन्हा ठरते का?',
+       opts:[
+         {t:'नाही — तक्रारदाराने स्वतःहून पैसे पाठवले असल्याने ती त्याची स्वतःची चूक आहे, गुन्हा नोंदवू नये', c:false},
+         {t:'होय — फसव्या आमिषाने/खोट्या बतावणीने पैसे उकळणे हे कायद्याने फसवणुकीचा गुन्हा ठरते, संमतीने पाठवले तरी', c:true},
+         {t:'फक्त बँकेकडे तक्रार करावी, पोलिसांत गुन्हा नोंदवण्याची गरज नाही', c:false},
+         {t:'रक्कम कमी असल्यास दुर्लक्ष करावे', c:false}],
+       exp:'"संमतीने पैसे दिले" हे केवळ वरवर दिसते — फसव्या बतावणी/आमिषाने संमती मिळवली असल्याने कायद्याने ती फसवणूकच ठरते. रक्कम कितीही असो, दखलपात्र गुन्हा नोंदवणे आवश्यक आहे.'},
+      {diff:'hard', q:'तांत्रिक तपासासाठी व आरोपी सापडल्यानंतर पुढील कायदेशीर टप्पा?',
+       opts:[
+         {t:'संबंधित बँक/टेलिकॉमकडून माहिती मागवून, नियमानुसार अटक/नोटीस प्रक्रिया पूर्ण करून सक्षम न्यायालयात आरोपपत्र दाखल करा', c:true},
+         {t:'आरोपी लहान रकमेसाठी पकडला असल्याने फक्त समज देऊन सोडून द्या', c:false},
+         {t:'तक्रारदारालाच आरोपीशी समेट घडवायला सांगा', c:false},
+         {t:'बँकेने पैसे परत दिल्यास गुन्हा आपोआप रद्द होतो असे समजून प्रकरण बंद करा', c:false}],
+       exp:'पैसे परत मिळाले किंवा रक्कम कमी असली तरी दखलपात्र फसवणुकीचा गुन्हा कायम राहतो — योग्य पुराव्यांसह विहित कायदेशीर प्रक्रिया पूर्ण करणे आवश्यक आहे.'},
+      {diff:'easy', q:'तक्रारदाराचा मोबाईल/सिम अजूनही धोक्यात असू शकतो का हे तपासाल का?',
+       opts:[
+         {t:'नाही, फक्त बँक व्यवहाराशीच संबंध असतो', c:false},
+         {t:'होय — संशयास्पद अ‍ॅप्स/लिंक्स तात्काळ डिलीट करून, पासवर्ड बदलून मोबाईल व सिम सुरक्षित करण्याचा सल्ला द्या', c:true},
+         {t:'मोबाईल स्विच ऑफ करायला सांगा, पुढे काही करण्याची गरज नाही', c:false},
+         {t:'ही जबाबदारी टेलिकॉम कंपनीची आहे', c:false}],
+       exp:'फसवणुकीत वापरलेली लिंक/अ‍ॅप पुन्हा डेटा चोरू शकते — तात्काळ उपकरण सुरक्षित करणे हे नुकसान थांबवण्याचा भाग आहे.'},
+      {diff:'med', q:'बनावट खाते/नंबर वापरणाऱ्या आरोपीचा माग कसा घ्याल?',
+       opts:[
+         {t:'शोध घेणे कठीण आहे असे समजून प्रकरण प्रलंबित ठेवा', c:false},
+         {t:'संबंधित टेलिकॉम कंपनी व बँकेकडून योग्य कायदेशीर नोटिशीद्वारे KYC तपशील व IP लॉग्स मागवा', c:true},
+         {t:'फक्त तक्रारदाराला सांगून आरोपीचा नंबर स्वतः ट्रेस करायला सांगा', c:false},
+         {t:'सोशल मीडियावर सार्वजनिकपणे नंबर उघड करा', c:false}],
+       exp:'कायदेशीर नोटिशीद्वारे मिळवलेले KYC व IP तपशील हेच न्यायालयात टिकणारे व तपासाला दिशा देणारे पुरावे ठरतात.'},
+      {diff:'hard', q:'तक्रारदार म्हणतो, "बदनामीच्या भीतीने मला तक्रार करायची नाही" (उदा. ब्लॅकमेल/sextortion प्रकार). काय कराल?',
+       opts:[
+         {t:'तिच्या/त्याच्या इच्छेचा आदर करून तक्रार नोंदवूच नका', c:false},
+         {t:'गोपनीयता राखत, ओळख उघड होणार नाही याची खात्री देत तक्रार नोंदवा; कायद्याने संरक्षण व गोपनीयतेच्या तरतुदी उपलब्ध आहेत हे समजावून सांगा', c:true},
+         {t:'तक्रारदारालाच आरोपीशी थेट वाटाघाटी करायला सांगा', c:false},
+         {t:'सार्वजनिक ठिकाणी तक्रार नोंदवून घ्या, गोपनीयतेची गरज नाही', c:false}],
+       exp:'लैंगिक शोषण/ब्लॅकमेलसंबंधी प्रकरणांत तक्रारदाराची ओळख गोपनीय ठेवणे कायद्याने अपेक्षित आहे — भीतीमुळे तक्रार टाळणे गुन्हेगारांना बळ देते.'}
     ]
   },
   {
-    id:'missing', fileNo:'फाईल क्र. ०५', icon:'🔍', title:'हरवलेली व्यक्ती', type:'शोध व सुटका प्रकरण',
+    id:'missing', icon:'🔍', tab:'फाईल क्र. ०५', title:'हरवलेली व्यक्ती', type:'शोध व सुटका प्रकरण',
     desc:'एका कुटुंबाचे १२ वर्षांचे मूल शाळेतून घरी परतले नाही.',
+    brief:'शाळेतून घरी परतण्याची वेळ टळून गेली तरी १२ वर्षांचा मुलगा घरी पोहोचलेला नाही. काळजीत पडलेले पालक शाळेत व मित्रांकडे चौकशी करतात, पण काहीच माहिती मिळत नाही. संध्याकाळ होताच ते पोलीस ठाण्यात धाव घेतात. अल्पवयीन मुलाच्या बेपत्ता प्रकरणात प्रत्येक मिनिट महत्त्वाचा असतो.',
     steps:[
-      mk('easy','तक्रार आल्यावर पहिली कृती काय?',
-        [O('२४ तास वाट पाहायला सांगा, तोपर्यंत नोंद घेऊ नये'),
-         O('आधी घरातच शोध घ्या असे सांगून परत पाठवा'),
-         O('वेळ न दवडता तात्काळ नोंद घ्या (अल्पवयीन असल्याने विशेष प्राधान्य)',1),
-         O('सोशल मीडियावर आधी स्वतः शोधण्यास सांगा')],
-        'अल्पवयीन मुलांच्या बेपत्ता प्रकरणांत २४ तासांची प्रतीक्षा न करता तात्काळ कारवाई अपेक्षित असते.'),
-      mk('easy','प्राथमिक माहिती संकलनात काय समाविष्ट कराल?',
-        [O('फक्त नाव व वय'),
-         O('अलीकडील फोटो, ओळखीच्या खुणा, पेहराव व शेवटचे दिसलेले ठिकाण/वेळ',1),
-         O('फक्त पालकांचा मोबाईल नंबर'),
-         O('माहिती संकलनाची घाई करू नका, नंतर घेऊ')],
-        'सविस्तर व अचूक प्राथमिक माहिती शोधकार्याची दिशा व वेग ठरवते.'),
-      mk('easy','घरात भांडण होऊन मूल निघून गेले असण्याची शक्यता वाटल्यास काय कराल?',
-        [O('कारण किरकोळ वाटते म्हणून शोध सौम्य ठेवा'),
-         O('तरीही तात्काळ नोंद व शोध सुरू करा, कारण गृहीत धरून हलके घेऊ नका',1),
-         O('मूल स्वतःच परत येईल असे सांगून वाट पाहा'),
-         O('पालकांनाच स्वतः शोधायला सांगा')],
-        'संभाव्य कारण काहीही असो, अल्पवयीन बेपत्ता प्रकरण नेहमी तितक्याच गांभीर्याने हाताळावे.'),
-      mk('easy','मूल आधीही घर सोडून गेले होते का हे का विचाराल?',
-        [O('तपासासाठी उपयुक्त माहिती म्हणून, पण यामुळे प्रकरण हलके घेऊ नये',1),
-         O('आधी गेले असल्यास यावेळी गुन्हा नोंदवूच नये'),
-         O('हा प्रश्न विचारण्याची गरजच नाही'),
-         O('आधी गेले असल्यास पालकांवरच संशय घ्या')],
-        'पूर्वेतिहास तपासाला दिशा देऊ शकतो, पण त्यामुळे यावेळच्या प्रकरणाचे गांभीर्य कमी करू नये.'),
-      mk('easy','नातेवाईकांचे संपर्क क्रमांक व अलीकडील फोन कॉल्स तपासणे का आवश्यक?',
-        [O('मूल कोणाशी संपर्कात होते हे शोधण्यासाठी उपयुक्त ठरते',1),
-         O('फोन तपासणे गोपनीयतेचा भंग असल्याने टाळावे'),
-         O('फक्त पालकांचाच फोन तपासावा, इतरांचा नाही'),
-         O('फोन तपासणी नंतर सवडीने करावी')],
-        'अलीकडील संपर्क तपासल्याने मूल कोणासोबत असू शकते याचा धागा मिळू शकतो.'),
-      mk('med','तांत्रिक शोधासाठी कोणते स्रोत तपासाल?',
-        [O('फक्त शेजाऱ्यांना विचारून थांबा'),
-         O('परिसरातील CCTV फुटेज व शक्य असल्यास मोबाईल लोकेशन डेटा',1),
-         O('तांत्रिक शोधाची गरज नाही, मूल स्वतः परत येईल'),
-         O('काही दिवसांनी शोध सुरू करा')],
-        'CCTV व लोकेशन डेटा यामुळे व्यक्तीचा शेवटचा मार्ग निश्चित करणे सोपे होते.'),
-      mk('med','शाळा/बस/रिक्षा साखळी कशी तपासाल?',
-        [O('शाळेच्या गेटपर्यंतच माहिती घेऊन थांबा'),
-         O('शाळा, स्कूल बस/रिक्षाचालक व त्यांच्या मार्गावरील CCTV यांची संपूर्ण साखळी तपासा',1),
-         O('शाळेची चौकशी करण्याची गरज नाही'),
-         O('फक्त बसचालकाला दोषी ठरवा')],
-        'मुलाचा शेवटचा मार्ग पूर्णपणे पुनर्रचित करण्यासाठी शाळा ते घर या संपूर्ण साखळीची चौकशी आवश्यक आहे.'),
-      mk('med','जवळपासचे रेल्वे स्टेशन/बसस्थानक तपासणे का आवश्यक?',
-        [O('मूल शहराबाहेर गेले असण्याची शक्यता तपासण्यासाठी',1),
-         O('ही ठिकाणे तपासण्याची गरज नाही'),
-         O('फक्त पोलीस स्टेशनजवळील परिसरच तपासावा'),
-         O('स्टेशन तपासणी फक्त मोठ्या शहरांतच करावी')],
-        'सार्वजनिक वाहतूक केंद्रे बेपत्ता व्यक्तीच्या हालचालीचा महत्त्वाचा धागा देऊ शकतात.'),
-      mk('med','सोशल मीडियावर अपील कसे कराल?',
-        [O('अधिकृत माध्यमातून, फोटोसह पण सुरक्षिततेचे भान ठेवून सावधपणे प्रसिद्ध करा',1),
-         O('कोणत्याही पडताळणीशिवाय सर्व माहिती जाहीर करा'),
-         O('सोशल मीडिया अपील करूच नये'),
-         O('फक्त पालकांना स्वतःहून पोस्ट करायला सांगा')],
-        'अधिकृत व नियंत्रित पद्धतीने केलेले अपील शोधकार्यास मदत करते व चुकीच्या माहितीचा प्रसार टाळते.'),
-      mk('med','मानव तस्करीची शक्यता वाटल्यास काय कराल?',
-        [O('अशी शक्यता विचारातच घेऊ नये'),
-         O('संशय असल्यास विशेष पथक/Anti Human Trafficking Unit ला तात्काळ कळवा',1),
-         O('पुराव्याशिवाय अशी शक्यता बोलू नये'),
-         O('मानव तस्करीचा तपास फक्त वरिष्ठ पातळीवरच होतो, स्थानिक ठाण्याने दुर्लक्ष करावे')],
-        'मानव तस्करीच्या संशयास्पद प्रकरणांत विशेष प्रशिक्षित यंत्रणेला लवकरात लवकर सामील करणे मुलाच्या सुरक्षिततेसाठी महत्त्वाचे आहे.'),
-      mk('hard','शाळेचे प्रशासन सांगते "आमची जबाबदारी शाळेच्या गेटपर्यंतच, पुढे पालकांची" — यावर काय भूमिका घ्याल?',
-        [O('शाळेचे म्हणणे मान्य करून फक्त पालकांकडूनच माहिती घ्या'),
-         O('शाळा, बस/रिक्षाचालक व CCTV — सर्व स्रोतांकडून स्वतंत्रपणे जबाब व पुरावे घ्या; जबाबदारीच्या वादात तपास मर्यादित करू नका',1),
-         O('शाळेवर लगेच गुन्हा नोंदवा'),
-         O('हा शाळेचा प्रशासकीय प्रश्न आहे असे मानून पोलीस तपास थांबवा')],
-        'तपासाची व्याप्ती संस्थात्मक "जबाबदारी"च्या वादावर अवलंबून नसते — मूल शेवटचे कुठे व कोणासोबत दिसले याचा पूर्ण मागोवा घेणे आवश्यक आहे.'),
-      mk('hard','मूल सापडल्यावर अंतिम प्रक्रिया काय?',
-        [O('लगेच पालकांच्या ताब्यात द्या, नोंद न ठेवता'),
-         O('ओळख निश्चित करून, आवश्यक तपासणीनंतर पालकांच्या ताब्यात देऊन नोंद औपचारिकरित्या बंद करा',1),
-         O('मुलाची कोणतीही चौकशी न करता प्रकरण बंद करा'),
-         O('सुखरूप सापडल्याने कोणतीही औपचारिक प्रक्रिया आवश्यक नाही')],
-        'मूल सुखरूप सापडले तरी ओळख पडताळणी, आवश्यक तपासणी व औपचारिक नोंद-बंद प्रक्रिया वगळणे भविष्यात अडचणी निर्माण करू शकते.'),
-      mk('hard','मूल सापडले पण घरी जायला घाबरत असल्याचे दिसते. काय कराल?',
-        [O('घाबरण्याकडे दुर्लक्ष करून थेट पालकांच्या ताब्यात द्या'),
-         O('कारण संवेदनशीलपणे जाणून घ्या — घरगुती छळाची शक्यता तपासून आवश्यकतेनुसार बाल कल्याण समितीशी संपर्क साधा',1),
-         O('मुलाला दुसऱ्या नातेवाईकाकडे स्वतःच्या मर्जीने पाठवा'),
-         O('मुलाच्या भीतीची शहानिशा न करता पालकांना बोलावून घरी पाठवा')],
-        'मुलाची भीती हे एखाद्या गंभीर समस्येचे लक्षण असू शकते — त्याकडे दुर्लक्ष न करता संवेदनशीलपणे व योग्य यंत्रणेमार्फत हाताळणे आवश्यक आहे.'),
-      mk('hard','बेपत्ता व्यक्ती सज्ञान महिला असून ती स्वतःहून घर सोडून गेल्याचा संशय आहे. काय कराल?',
-        [O('सज्ञान व्यक्ती स्वतःच्या मर्जीने गेली असेल तर तपासाची गरज नाही असे मानून प्रकरण बंद करा'),
-         O('तरीही समान गांभीर्याने तपास करा — तिची इच्छा व सुरक्षितता दोन्ही बघा',1),
-         O('स्वतःहून गेली असल्याचा संशय आल्यास FIR नोंदवूच नका'),
-         O('कुटुंबियांनाच शोधायला सांगून पोलीस सहभाग थांबवा')],
-        'सज्ञान व्यक्ती स्वतःच्या मर्जीने गेली असली तरी तिच्या सुरक्षिततेची खात्री करणे व योग्य तपास करणे आवश्यक असते — गृहीतकांवर तपास बंद करू नये.'),
-      mk('hard','तपासात विलंब झाल्याने कुटुंबाकडून तीव्र तक्रार येते. काय कराल?',
-        [O('कुटुंबाला टाळून प्रतिसाद देणे बंद करा'),
-         O('प्रामाणिकपणे प्रगती सांगा व वरिष्ठांना कळवून अतिरिक्त संसाधने/मनुष्यबळ मागवा',1),
-         O('विलंबाचे खापर इतर विभागांवर फोडा'),
-         O('कुटुंबाच्या तक्रारीकडे दुर्लक्ष करून नेहमीच्या गतीने काम सुरू ठेवा')],
-        'पारदर्शक संवाद व आवश्यकतेनुसार अतिरिक्त संसाधने मागवणे हे व्यावसायिक व जबाबदार हाताळणीचे लक्षण आहे.')
+      {diff:'easy', q:'तक्रार आल्यावर पहिली कृती काय?',
+       opts:[
+         {t:'२४ तास वाट पाहायला सांगा, तोपर्यंत नोंद घेऊ नये', c:false},
+         {t:'आधी घरातच शोध घ्या असे सांगून परत पाठवा', c:false},
+         {t:'वेळ न दवडता तात्काळ नोंद घ्या (अल्पवयीन असल्याने विशेष प्राधान्य)', c:true},
+         {t:'सोशल मीडियावर आधी स्वतः शोधण्यास सांगा', c:false}],
+       exp:'अल्पवयीन मुलांच्या बेपत्ता प्रकरणांत २४ तासांची प्रतीक्षा न करता तात्काळ कारवाई अपेक्षित असते.'},
+      {diff:'easy', q:'प्राथमिक माहिती संकलनात काय समाविष्ट कराल?',
+       opts:[
+         {t:'फक्त नाव व वय', c:false},
+         {t:'अलीकडील फोटो, ओळखीच्या खुणा, पेहराव व शेवटचे दिसलेले ठिकाण/वेळ', c:true},
+         {t:'फक्त पालकांचा मोबाईल नंबर', c:false},
+         {t:'माहिती संकलनाची घाई करू नका, नंतर घेऊ', c:false}],
+       exp:'सविस्तर व अचूक प्राथमिक माहिती शोधकार्याची दिशा व वेग ठरवते.'},
+      {diff:'med', q:'तांत्रिक शोधासाठी कोणते स्रोत तपासाल?',
+       opts:[
+         {t:'फक्त शेजाऱ्यांना विचारून थांबा', c:false},
+         {t:'परिसरातील CCTV फुटेज व शक्य असल्यास मोबाईल लोकेशन डेटा', c:true},
+         {t:'तांत्रिक शोधाची गरज नाही, मूल स्वतः परत येईल', c:false},
+         {t:'काही दिवसांनी शोध सुरू करा', c:false}],
+       exp:'CCTV व लोकेशन डेटा यामुळे व्यक्तीचा शेवटचा मार्ग निश्चित करणे सोपे होते.'},
+      {diff:'hard', q:'शाळेचे प्रशासन सांगते "आमची जबाबदारी शाळेच्या गेटपर्यंतच, पुढे पालकांची" — यावर काय भूमिका घ्याल?',
+       opts:[
+         {t:'शाळेचे म्हणणे मान्य करून फक्त पालकांकडूनच माहिती घ्या', c:false},
+         {t:'शाळा व्यवस्थापन, बस/रिक्षाचालक, तेथील CCTV — सर्व स्रोतांकडून स्वतंत्रपणे जबाब व पुरावे घ्या; जबाबदारीच्या वादात अडकून तपास मर्यादित करू नका', c:true},
+         {t:'शाळेवर लगेच गुन्हा नोंदवा', c:false},
+         {t:'हा शाळेचा प्रशासकीय प्रश्न आहे असे मानून पोलीस तपास थांबवा', c:false}],
+       exp:'तपासाची व्याप्ती संस्थात्मक "जबाबदारी"च्या वादावर अवलंबून नसते — मूल शेवटचे कुठे व कोणासोबत दिसले याचा पूर्ण मागोवा घेणे आवश्यक आहे, मग ती जबाबदारी कोणाचीही असो.'},
+      {diff:'hard', q:'मूल सापडल्यावर अंतिम प्रक्रिया काय?',
+       opts:[
+         {t:'लगेच पालकांच्या ताब्यात द्या, नोंद न ठेवता — मूल सुखरूप आहे हेच महत्त्वाचे', c:false},
+         {t:'ओळख निश्चित करून, आवश्यक तपासणीनंतर पालकांच्या ताब्यात देऊन नोंद औपचारिकरित्या बंद करा', c:true},
+         {t:'मुलाची कोणतीही चौकशी न करता प्रकरण बंद करा', c:false},
+         {t:'सुखरूप सापडल्याने कोणतीही औपचारिक प्रक्रिया आवश्यक नाही', c:false}],
+       exp:'मूल सुखरूप सापडले तरी ओळख पडताळणी, आवश्यक तपासणी व औपचारिक नोंद-बंद प्रक्रिया वगळणे भविष्यात कायदेशीर व प्रशासकीय अडचणी निर्माण करू शकते.'},
+      {diff:'easy', q:'मुलाचा नियमित दिनक्रम व मित्रपरिवाराबद्दल तक्रारदाराकडून विचाराल का?',
+       opts:[
+         {t:'नाही, फक्त शेवटचे ठिकाण पुरेसे आहे', c:false},
+         {t:'होय — दिनक्रम, मित्रपरिवार व अलीकडील वर्तनातील कोणताही बदल जाणून घेणे तपासाला दिशा देते', c:true},
+         {t:'ही माहिती गोपनीय ठेवायला हवी, विचारू नये', c:false},
+         {t:'हे प्रश्न नंतर, आधी FIR नोंदवा', c:false}],
+       exp:'दिनक्रम व सामाजिक वर्तुळाची माहिती संभाव्य ठिकाणे व कारणे ओळखण्यास मदत करते.'},
+      {diff:'med', q:'बेपत्ता व्यक्ती अल्पवयीन नसून प्रौढ (adult) असल्यास प्रक्रियेत काय फरक असतो?',
+       opts:[
+         {t:'प्रौढ व्यक्तीची तक्रार २४ तासांनंतरच नोंदवावी', c:false},
+         {t:'प्रौढांच्या बाबतीतही तात्काळ नोंद घ्यावी; मात्र स्वखुशीने घर सोडल्याची शक्यताही तपासात लक्षात घ्यावी', c:true},
+         {t:'प्रौढ व्यक्तीच्या बेपत्ता प्रकरणात पोलिसांची भूमिका नसते', c:false},
+         {t:'प्रौढांसाठी फक्त कुटुंबानेच शोध घ्यावा', c:false}],
+       exp:'वयाचा फरक असला तरी तात्काळ नोंद घेणे आवश्यकच आहे; तपासाची दिशा ठरवताना संभाव्य कारणांचा (स्वखुशीने जाणे, अपघात, गुन्हा) साकल्याने विचार करावा.'},
+      {diff:'hard', q:'तपासात समजते की मूल पालकांच्या छळामुळेच स्वतःहून घरातून निघून गेले होते. काय कराल?',
+       opts:[
+         {t:'मूल सापडले की लगेच पालकांच्या ताब्यात देऊन प्रकरण बंद करा', c:false},
+         {t:'मुलाच्या सुरक्षिततेला प्राधान्य देत बाल कल्याण समितीशी (Child Welfare Committee) संपर्क साधून, परिस्थितीची शहानिशा केल्याशिवाय थेट पालकांच्या ताब्यात देऊ नका', c:true},
+         {t:'छळाच्या तक्रारीकडे दुर्लक्ष करून मुलालाच दोष द्या', c:false},
+         {t:'पालकांवर कोणतीही कारवाई शक्य नाही असे मुलाला सांगा', c:false}],
+       exp:'मूल सुखरूप सापडणे पुरेसे नाही — जर घरगुती छळ हे कारण असेल, तर बाल कल्याण समितीमार्फत मुलाच्या सुरक्षिततेची खातरजमा केल्याशिवाय पालकांच्या ताब्यात देणे धोकादायक ठरू शकते.'}
     ]
   },
   {
-    id:'snatch', fileNo:'फाईल क्र. ०६', icon:'⛓️', title:'सोनसाखळी चोरी', type:'रस्त्यावरील जबरी चोरी',
+    id:'snatch', icon:'⛓️', tab:'फाईल क्र. ०६', title:'सोनसाखळी चोरी', type:'रस्त्यावरील जबरी चोरी',
     desc:'दुचाकीवरून आलेल्या दोघांनी एका महिलेची सोनसाखळी हिसकावून पळ काढला.',
+    brief:'संध्याकाळच्या गर्दीच्या वेळी रस्त्याने चालत जाणाऱ्या एका महिलेच्या गळ्यातील सोनसाखळी दुचाकीवरून आलेल्या दोन अनोळखी व्यक्तींनी हिसकावून घेतली आणि क्षणार्धात पळ काढला. घाबरलेली महिला मदतीसाठी ओरडते, आजूबाजूचे लोक जमतात. काही वेळातच ती जवळच्या पोलीस ठाण्यात पोहोचून तक्रार नोंदवते.',
     steps:[
-      mk('easy','तक्रार नोंदवताना कोणती माहिती प्राधान्याने घ्याल?',
-        [O('फक्त गमावलेल्या दागिन्याचे वजन व किंमत'),
-         O('आरोपींचे वर्णन, वाहन क्रमांक/रंग व घटनेची नेमकी वेळ-जागा',1),
-         O('तक्रारदाराचे नाव-पत्ता तेवढेच'),
-         O('माहिती नंतर सवडीने घेऊ')],
-        'आरोपी व वाहनाचे वर्णन तात्काळ नाकाबंदी व शोधकार्यासाठी सर्वात उपयुक्त ठरते.'),
-      mk('easy','पुरावा जतन करण्यासाठी तातडीने काय कराल?',
-        [O('काही दिवसांनी फुटेज मागवा'),
-         O('CCTV नसल्यास तपास थांबवा'),
-         O('फुटेज तपासण्याची गरज नाही, साक्षीदार पुरेसे'),
-         O('परिसरातील CCTV फुटेज त्वरित ताब्यात घ्या (डेटा डिलीट होण्यापूर्वी)',1)],
-        'बहुतांश खासगी CCTV सिस्टीम मर्यादित काळासाठी डेटा साठवतात — विलंब झाल्यास महत्त्वाचा पुरावा कायमचा गमावला जाऊ शकतो.'),
-      mk('easy','महिलेला धक्का बसून पडल्याने जखम झाली असल्यास काय कराल?',
-        [O('वैद्यकीय तपासणी करवून जखमेची नोंद करा',1),
-         O('किरकोळ जखम असल्यास दुर्लक्ष करा'),
-         O('जखमेची नोंद केल्यास प्रकरण गुंतागुंतीचे होते म्हणून टाळा'),
-         O('जखमेची चौकशी नंतर करू')],
-        'शारीरिक इजा झाली असल्यास ती नोंदवणे गुन्ह्याचे स्वरूप निश्चित करण्यासाठी महत्त्वाचे आहे.'),
-      mk('easy','तक्रारदाराशी संवाद कसा साधाल?',
-        [O('घाबरवणाऱ्या प्रश्नांऐवजी सहानुभूतीने व संयमाने चौकशी करा',1),
-         O('तात्काळ तपशीलवार जबाब देण्यासाठी दबाव आणा'),
-         O('घटनेची जबाबदारी तिच्यावरच ढकलणारे प्रश्न विचारा'),
-         O('चौकशी सार्वजनिक ठिकाणी करा')],
-        'संवेदनशील व सहानुभूतीपूर्ण चौकशीमुळे तक्रारदार अधिक अचूक व सविस्तर माहिती देऊ शकते.'),
-      mk('easy','दागिन्याचे फोटो/खरेदीची पावती असल्यास काय कराल?',
-        [O('मागवून नोंदवा, ओळख पटवण्यासाठी उपयुक्त ठरते',1),
-         O('फोटो/पावतीची गरज नाही'),
-         O('फक्त वर्णन पुरेसे आहे असे मानून दुर्लक्ष करा'),
-         O('पावती नसल्यास तक्रार नोंदवू नये')],
-        'फोटो व पावती दागिना ओळखण्यासाठी व नंतर मालकी सिद्ध करण्यासाठी उपयुक्त पुरावे आहेत.'),
-      mk('med','आरोपी पकडण्यासाठी कोणती तात्काळ रणनीती योग्य?',
-        [O('नियंत्रण कक्षाला कळवून परिसरातील नाकाबंदी (naka bandi) करा',1),
-         O('आरोपी स्वतःहून सापडेल याची वाट पाहा'),
-         O('नाकाबंदीची गरज नाही, वेळ वाया जातो'),
-         O('फक्त तक्रारदाराच्या भागातच शोध घ्या')],
-        'तत्काळ नाकाबंदी केल्याने आरोपी परिसर सोडण्यापूर्वी पकडले जाण्याची शक्यता वाढते.'),
-      mk('med','दुचाकीचे वर्णन/नंबर मिळाल्यास पुढे काय कराल?',
-        [O('जवळपासच्या RTO/टोल नाका डेटाशी नंबर जुळवून वाहन मालक शोधा',1),
-         O('नंबर प्लेट अस्पष्ट असल्याने त्या माहितीकडे दुर्लक्ष करा'),
-         O('फक्त तक्रारदारालाच वाहन ओळखायला सांगा'),
-         O('वाहन नंबर तपासण्याची घाई करू नका')],
-        'वाहन नोंदणी डेटाशी पडताळणी केल्याने मालक व संभाव्य आरोपीपर्यंत पोहोचणे सोपे होते.'),
-      mk('med','पूर्वीच्या अशाच गुन्ह्यांशी पॅटर्न कसा जुळवाल?',
-        [O('स्थानिक गुन्हे शाखेच्या रेकॉर्डशी पद्धत (modus operandi) ताडून पहा',1),
-         O('प्रत्येक गुन्हा वेगळा मानून जुन्या रेकॉर्डकडे दुर्लक्ष करा'),
-         O('पॅटर्न जुळवणे वेळखाऊ आहे म्हणून टाळा'),
-         O('फक्त नवीन आरोपींचाच विचार करा')],
-        'सराईत गुन्हेगारांची कार्यपद्धत अनेकदा सारखीच असते — जुन्या रेकॉर्डशी तुलना केल्याने संशयित लवकर सापडतात.'),
-      mk('med','सराफा बाजारात दागिना विकला जाण्याची शक्यता लक्षात घेऊन काय कराल?',
-        [O('स्थानिक सराफांना वर्णन देऊन सतर्क करा',1),
-         O('सराफांना कळवण्याची गरज नाही'),
-         O('दागिना वितळवला जाईल असे गृहीत धरून शोध सोडून द्या'),
-         O('फक्त मोठ्या दुकानांनाच कळवा, लहान दुकानांना नको')],
-        'सराफांना सतर्क केल्याने मुद्देमाल विकला जाण्यापूर्वी पकडला जाण्याची शक्यता वाढते.'),
-      mk('med','जवळच्या दुकानदारांना साक्षीदार म्हणून कसे सामील कराल?',
-        [O('त्यांचे जबाब नोंदवून घटनेचा क्रम पडताळा',1),
-         O('दुकानदारांची साक्ष घेण्याची गरज नाही'),
-         O('फक्त तक्रारदाराच्याच साक्षीवर अवलंबून राहा'),
-         O('दुकानदारांना साक्षीसाठी जबरदस्ती करा')],
-        'जवळच्या दुकानदारांची स्वतंत्र साक्ष घटनाक्रम पडताळण्यासाठी व तांत्रिक पुराव्यांना पूरक ठरते.'),
-      mk('hard','संशयित पकडला असून तो "मीच केले" अशी तात्काळ तोंडी कबुली देतो. या कबुलीच्या आधारे थेट आरोपपत्र दाखल करणे पुरेसे आहे का?',
-        [O('होय — पोलिसांसमोरची कबुली पुरेशी असते, अधिक पुराव्याची गरज नाही'),
-         O('नाही — पोलिसांसमोरची कबुली स्वतंत्रपणे पुराव्यादाखल ग्राह्य नसते; ओळख परेड, मुद्देमाल जप्ती व स्वतंत्र पुराव्यांनीच प्रकरण भक्कम करावे',1),
-         O('कबुली मिळाली म्हणजे पुढील तपासाची गरजच उरत नाही'),
-         O('कबुली दिली असल्याने पंचनामा वगळता येतो')],
-        'पोलीस अधिकाऱ्यासमोर दिलेली कबुली स्वतंत्र पुरावा म्हणून सामान्यतः ग्राह्य धरली जात नाही — म्हणूनच स्वतंत्र पुराव्यांद्वारे तपास भक्कम करणे आवश्यक असते.'),
-      mk('hard','मुद्देमाल (सोनसाखळी) जप्त झाल्यावर काय कराल?',
-        [O('मुद्देमाल तक्रारदारास लगेच परत करा, नोंद न ठेवता'),
-         O('पंचांसमोर पंचनामा करून मुद्देमाल सील करा व आरोपपत्रासोबत नोंद जोडा; तक्रारदारास नियमानुसार व न्यायालयीन परवानगीने अंतरिम ताबा देता येतो',1),
-         O('मुद्देमालाची पावती न देता ठाण्यातच ठेवा'),
-         O('जप्तीची औपचारिक नोंद आवश्यक नाही, फोटो पुरेसा आहे')],
-        'मुद्देमाल हा गुन्ह्याचा मुख्य पुरावा असल्याने योग्य पंचनामा व नोंदीशिवाय तो परत करणे किंवा वगळणे आरोपपत्र कमकुवत करते.'),
-      mk('hard','पकडलेला संशयित दुसराच "बकरा" असून खरा आरोपी वेगळा असल्याचा संशय आहे. काय कराल?',
-        [O('एका अटकेवर समाधान मानून प्रकरण निकाली काढा'),
-         O('संपूर्ण टोळी/साखळी शोधून खऱ्या सूत्रधारापर्यंत पोहोचण्याचा प्रयत्न सुरू ठेवा',1),
-         O('पकडलेल्या संशयितालाच शिक्षा पुरेशी मानून तपास थांबवा'),
-         O('संशय आहे इतकंच सांगून तपास अर्धवट सोडा')],
-        'एका अटकेने समाधान मानणे टोळीतील मुख्य सूत्रधारांना मोकळे सोडते — साखळी पूर्णपणे शोधणे आवश्यक आहे.'),
-      mk('hard','आरोपी अल्पवयीन असल्याचे निष्पन्न झाल्यास काय कराल?',
-        [O('प्रौढांप्रमाणेच सर्वसाधारण प्रक्रिया वापरा'),
-         O('Juvenile Justice Act नुसार वेगळी संरक्षणात्मक प्रक्रिया वापरा',1),
-         O('अल्पवयीन असल्याने कोणतीही कारवाई करू नका'),
-         O('पालकांकडे सोपवून प्रकरण बंद करा')],
-        'अल्पवयीन आरोपीसाठी बाल न्याय कायद्यांतर्गत विशेष प्रक्रिया वापरणे कायद्याने बंधनकारक आहे.'),
-      mk('hard','दागिना सापडल्यावर तक्रारदार "आता गुन्हा मागे घ्या" असे म्हणते. काय कराल?',
-        [O('दागिना परत मिळाला म्हणून FIR तात्काळ रद्द करा'),
-         O('दखलपात्र गुन्हा अधिकृतपणे मागे घेता येत नाही हे समजावून सांगत कायदेशीर प्रक्रिया पूर्ण करा',1),
-         O('तक्रारदाराच्या सांगण्यावरून तपास थांबवून फाईल बंद करा'),
-         O('दागिना परत दिल्यास आरोपीला सोडून द्या')],
-        'दखलपात्र गुन्ह्याची तक्रार तक्रारदाराच्या इच्छेने अधिकृतपणे "मागे" घेता येत नाही — मुद्देमाल परत मिळाला तरी विहित कायदेशीर प्रक्रिया पूर्ण करावीच लागते.')
+      {diff:'easy', q:'तक्रार नोंदवताना कोणती माहिती प्राधान्याने घ्याल?',
+       opts:[
+         {t:'फक्त गमावलेल्या दागिन्याचे वजन व किंमत', c:false},
+         {t:'आरोपींचे वर्णन, वाहन क्रमांक/रंग व घटनेची नेमकी वेळ-जागा', c:true},
+         {t:'तक्रारदाराचे नाव-पत्ता तेवढेच', c:false},
+         {t:'माहिती नंतर सवडीने घेऊ', c:false}],
+       exp:'आरोपी व वाहनाचे वर्णन तात्काळ नाकाबंदी व शोधकार्यासाठी सर्वात उपयुक्त ठरते.'},
+      {diff:'easy', q:'पुरावा जतन करण्यासाठी तातडीने काय कराल?',
+       opts:[
+         {t:'काही दिवसांनी फुटेज मागवा', c:false},
+         {t:'CCTV नसल्यास तपास थांबवा', c:false},
+         {t:'फुटेज तपासण्याची गरज नाही, साक्षीदार पुरेसे', c:false},
+         {t:'परिसरातील CCTV फुटेज त्वरित ताब्यात घ्या (डेटा डिलीट होण्यापूर्वी)', c:true}],
+       exp:'बहुतांश खासगी CCTV सिस्टीम मर्यादित काळासाठी डेटा साठवतात — विलंब झाल्यास महत्त्वाचा पुरावा कायमचा गमावला जाऊ शकतो.'},
+      {diff:'med', q:'आरोपी पकडण्यासाठी कोणती तात्काळ रणनीती योग्य?',
+       opts:[
+         {t:'नियंत्रण कक्षाला कळवून परिसरातील नाकाबंदी (naka bandi) करा', c:true},
+         {t:'आरोपी स्वतःहून सापडेल याची वाट पाहा', c:false},
+         {t:'नाकाबंदीची गरज नाही, वेळ वाया जातो', c:false},
+         {t:'फक्त तक्रारदाराच्या भागातच शोध घ्या', c:false}],
+       exp:'तत्काळ नाकाबंदी केल्याने आरोपी परिसर सोडण्यापूर्वी पकडले जाण्याची शक्यता वाढते.'},
+      {diff:'hard', q:'संशयित पकडला असून तो "मीच केले" अशी तात्काळ तोंडी कबुली देतो. या कबुलीच्या आधारे थेट आरोपपत्र दाखल करणे पुरेसे आहे का?',
+       opts:[
+         {t:'होय — पोलिसांसमोरची कबुली पुरेशी असते, अधिक पुराव्याची गरज नाही', c:false},
+         {t:'नाही — पोलिसांसमोरची कबुली स्वतंत्रपणे पुराव्यादाखल ग्राह्य नसते; ओळख परेड, मुद्देमाल जप्ती व स्वतंत्र पुराव्यांनीच प्रकरण भक्कम करावे', c:true},
+         {t:'कबुली मिळाली म्हणजे पुढील तपासाची गरजच उरत नाही', c:false},
+         {t:'कबुली दिली असल्याने पंचनामा वगळता येतो', c:false}],
+       exp:'पोलीस अधिकाऱ्यासमोर दिलेली कबुली स्वतंत्र पुरावा म्हणून सामान्यतः ग्राह्य धरली जात नाही — म्हणूनच ओळख परेड, मुद्देमाल जप्ती व स्वतंत्र साक्ष्यांद्वारे तपास भक्कम करणे आवश्यक असते. कबुलीवर विसंबून राहणे ही मोठी त्रुटी आहे.'},
+      {diff:'hard', q:'मुद्देमाल (सोनसाखळी) जप्त झाल्यावर काय कराल?',
+       opts:[
+         {t:'मुद्देमाल तक्रारदारास लगेच परत करा, नोंद न ठेवता — तिचीच वस्तू आहे', c:false},
+         {t:'पंचांसमोर पंचनामा करून मुद्देमाल सील करा व आरोपपत्रासोबत नोंद जोडा; तक्रारदारास नियमानुसार व न्यायालयाच्या परवानगीने अंतरिम ताबा देता येतो', c:true},
+         {t:'मुद्देमालाची पावती न देता ठाण्यातच ठेवा', c:false},
+         {t:'जप्तीची औपचारिक नोंद आवश्यक नाही, फोटो पुरेसा आहे', c:false}],
+       exp:'मुद्देमाल हा गुन्ह्याचा मुख्य पुरावा असल्याने योग्य पंचनामा व नोंदीशिवाय तो परत करणे किंवा वगळणे आरोपपत्र कमकुवत करते; तक्रारदारास ताबा हवा असल्यास तो नियमानुसार व न्यायालयीन प्रक्रियेद्वारेच द्यावा.'},
+      {diff:'easy', q:'घटनेनंतर जखमी झालेल्या महिलेस सर्वप्रथम काय मदत कराल?',
+       opts:[
+         {t:'आधी तक्रार नोंदवा, वैद्यकीय मदत नंतर पाहा', c:false},
+         {t:'प्रथम वैद्यकीय मदत उपलब्ध करून द्या/रुग्णालयात हलवा, त्यानंतर तक्रार नोंदवा', c:true},
+         {t:'फक्त आरोपींचा पाठलाग करा, जखमीकडे नंतर लक्ष द्या', c:false},
+         {t:'वैद्यकीय मदतीची गरज आहे का ते तिलाच ठरवू द्या', c:false}],
+       exp:'जीव व आरोग्य वाचवणे हे नेहमीच प्रथम प्राधान्य असते — कागदोपत्री प्रक्रिया त्यानंतर येते.'},
+      {diff:'med', q:'परिसरातील इतर तत्सम गुन्ह्यांशी (pattern) या घटनेचा संबंध तपासाल का?',
+       opts:[
+         {t:'नाही, प्रत्येक गुन्हा स्वतंत्रपणे हाताळावा', c:false},
+         {t:'होय — समान पद्धतीच्या (modus operandi) अलीकडील गुन्ह्यांशी तुलना करून संघटित टोळीचा संशय पडताळावा', c:true},
+         {t:'फक्त तक्रारदाराच्या भागापुरताच विचार करावा', c:false},
+         {t:'पॅटर्न तपासणे वेळखाऊ असल्याने टाळावे', c:false}],
+       exp:'समान पद्धतीच्या गुन्ह्यांची तुलना केल्याने संघटित टोळी ओळखणे व एकत्रित तपासाद्वारे जलद निकाल लागणे शक्य होते.'},
+      {diff:'hard', q:'पकडलेला संशयित अल्पवयीन (Juvenile) असल्याचे निष्पन्न होते. पुढील कार्यवाही काय?',
+       opts:[
+         {t:'गुन्हा गंभीर असल्याने प्रौढांप्रमाणेच सर्वसाधारण कोठडीत ठेवा', c:false},
+         {t:'Juvenile Justice Act नुसार बाल न्याय मंडळासमोर हजर करा; प्रौढ कोठडीत न ठेवता विशेष किशोर पोलीस घटकामार्फत कार्यवाही करा', c:true},
+         {t:'वय लहान असल्याचे कारण देत कोणतीही नोंद न घेता सोडून द्या', c:false},
+         {t:'पालकांना कळवण्याची गरज नाही, थेट चौकशी करा', c:false}],
+       exp:'गुन्हा गंभीर असला तरी अल्पवयीन संशयितांसाठी कायद्याने विशेष व संरक्षणात्मक प्रक्रिया बंधनकारक आहे — त्यांना प्रौढ कोठडीत ठेवणे बेकायदेशीर आहे.'}
+    ]
+  },
+  {
+    id:'murder', icon:'🔎', tab:'फाईल क्र. ०७', title:'खून / हत्या', type:'गंभीर मालमत्ताविरहित गुन्हा',
+    desc:'निर्जन गल्लीत एका अनोळखी इसमाचा संशयास्पद मृतदेह सापडतो.',
+    brief:'रात्री उशिरा एका निर्जन गल्लीत एका इसमाचा मृतदेह सापडतो. डोक्यावर गंभीर जखम असून जवळपास कोणतेही ओळखपत्र सापडत नाही. स्थानिक रहिवाशांनी रात्री भांडणाचा आवाज ऐकल्याचे सांगितले आहे. तुम्ही प्रथम प्रतिसाद अधिकारी म्हणून घटनास्थळी पोहोचता — या टप्प्यावरील प्रत्येक चूक संपूर्ण तपास कमकुवत करू शकते.',
+    steps:[
+      {diff:'easy', q:'घटनास्थळी पोहोचल्यावर प्रथम कृती काय?',
+       opts:[
+         {t:'जमाव व नातेवाईकांना घटनास्थळाजवळ येऊ द्या', c:false},
+         {t:'घटनास्थळ बॅरिकेड करून अनधिकृत प्रवेश तात्काळ रोखा', c:true},
+         {t:'मृत्यूची अधिकृत खात्री होण्यापूर्वीच मृतदेह उचलून घेऊन जा', c:false},
+         {t:'फक्त मोबाईलने फोटो काढून पुढे निघा', c:false}],
+       exp:'घटनास्थळ सुरक्षित व जतन करणे हे खून प्रकरणातील सर्वात महत्त्वाचे प्राथमिक पाऊल आहे — जमाव किंवा घाईमुळे पुरावा नष्ट होऊ शकतो.'},
+      {diff:'easy', q:'प्राथमिक माहितीसाठी सर्वप्रथम कोणाला कळवाल?',
+       opts:[
+         {t:'वरिष्ठ पोलीस अधिकारी, फॉरेन्सिक टीम व वैद्यकीय अधिकाऱ्यांना तात्काळ कळवा', c:true},
+         {t:'फक्त स्थानिक पत्रकारांना कळवा', c:false},
+         {t:'मृतदेह एकट्याने ताब्यात घेऊन स्वतःच तपास सुरू करा', c:false},
+         {t:'घटनास्थळावरील साक्षीदारांना लगेच घरी पाठवा', c:false}],
+       exp:'गंभीर गुन्ह्यात वरिष्ठ अधिकारी व फॉरेन्सिक पथकाला तात्काळ कळवल्याने योग्य तांत्रिक मार्गदर्शन व मदत वेळेत मिळते.'},
+      {diff:'med', q:'मृतदेहाची ओळख पटवण्यासाठी कोणती पद्धत अवलंबाल?',
+       opts:[
+         {t:'नातेवाईकांना पाचारण करून ओळख पटवा व आवश्यकतेनुसार फिंगरप्रिंट/DNA नमुना घ्या', c:true},
+         {t:'ओळख पटवण्याची गरज नाही, पंचनामा पुरेसा आहे', c:false},
+         {t:'फक्त कपड्यांवरून अंदाज बांधा', c:false},
+         {t:'ओळख न पटवताच अंत्यसंस्काराची परवानगी द्या', c:false}],
+       exp:'अचूक ओळख पडताळणी ही तपासाची दिशा ठरवते; केवळ कपड्यांवरून बांधलेला अंदाज चुकीचा ठरू शकतो.'},
+      {diff:'hard', q:'पोस्टमार्टम अहवालात मृत्यूची वेळ रात्री ११ ते १ दरम्यान दर्शवली आहे, पण मुख्य संशयिताकडे त्या वेळेचे भक्कम अलिबाय (alibi) पुरावे आहेत. काय कराल?',
+       opts:[
+         {t:'अलिबाय दुर्लक्षून संशयितालाच थेट अटक करा', c:false},
+         {t:'अलिबायची स्वतंत्रपणे तांत्रिक पडताळणी (CCTV, कॉल लोकेशन) करूनच पुढील निर्णय घ्या', c:true},
+         {t:'अलिबाय आहे म्हणून लगेच तपास बंद करा', c:false},
+         {t:'अलिबाय तपासण्याची गरज नाही, तोंडी जबाब पुरेसा आहे', c:false}],
+       exp:'अलिबायचा दावा स्वतंत्र तांत्रिक पुराव्यांनी पडताळणे आवश्यक आहे — गृहीत धरणे किंवा पूर्ण दुर्लक्ष करणे दोन्ही गंभीर चुका ठरतात.'},
+      {diff:'hard', q:'तपासात कळते की मृत व्यक्तीचा जुना आर्थिक वाद एका नातेवाईकाशी होता आणि तोच नातेवाईक तक्रार नोंदवायला सर्वप्रथम पुढे आला होता. काय कराल?',
+       opts:[
+         {t:'तो तक्रार नोंदवायला आला म्हणून त्याला संशयातून पूर्णपणे वगळा', c:false},
+         {t:'आर्थिक वादाच्या पार्श्वभूमीसह त्याच्याही हालचाली व अलिबायची निष्पक्षपणे चौकशी करा', c:true},
+         {t:'नातेवाईक असल्याने त्याची चौकशी टाळा', c:false},
+         {t:'पुराव्याशिवाय केवळ संशयावरून त्याला लगेच अटक करा', c:false}],
+       exp:'तक्रार नोंदवणारी व्यक्ती स्वतःच संशयित असू शकते — नातेसंबंध किंवा तक्रार नोंदवण्याची कृती चौकशीतून वगळण्याचे कारण ठरू शकत नाही; मात्र पुराव्याशिवाय अटकही तितकीच चुकीची आहे.'}
+    ]
+  },
+  {
+    id:'riot', icon:'🚨', tab:'फाईल क्र. ०८', title:'दंगल व जमाव नियंत्रण', type:'सार्वजनिक सुव्यवस्था प्रकरण',
+    desc:'किरकोळ वादातून दोन गटांत हिंसक झटापट व दगडफेक सुरू होते.',
+    brief:'दोन गटांमध्ये किरकोळ कारणावरून वाद होऊन तो मोठ्या जमावाच्या हिंसक झटापटीत बदलतो. परिसरातील दुकाने घाईघाईत बंद होत आहेत आणि दगडफेक सुरू आहे. तुम्हाला बंदोबस्तासाठी तात्काळ पाचारण करण्यात आले आहे — परिस्थिती हाताळताना कायदा-सुव्यवस्था व जीवितहानी टाळणे यांचा समतोल राखावा लागेल.',
+    steps:[
+      {diff:'easy', q:'घटनास्थळी पोहोचल्यावर प्रथम प्राधान्य काय असावे?',
+       opts:[
+         {t:'जमावावर लगेच लाठीचार्ज सुरू करा', c:false},
+         {t:'परिस्थितीचे मूल्यांकन करून जीवितहानी टाळण्यासाठी शांततापूर्ण मार्गाने जमाव पांगवण्याचा प्रयत्न करा', c:true},
+         {t:'जमावाकडे दुर्लक्ष करून फक्त दुरून निरीक्षण करा', c:false},
+         {t:'स्वतःच्या अधिकारात थेट गोळीबाराचे आदेश द्या', c:false}],
+       exp:'प्रमाणबद्ध बळाचा वापर (proportionate force) हे मूलभूत तत्त्व आहे — आधी शांततापूर्ण उपाय, गरज पडल्यास टप्प्याटप्प्याने वाढीव कारवाई.'},
+      {diff:'easy', q:'जमावाला पांगवण्यापूर्वी कायद्याने कोणती प्रक्रिया आवश्यक आहे?',
+       opts:[
+         {t:'थेट बळाचा वापर करा, इशारा देण्याची गरज नाही', c:false},
+         {t:'विहित कायदेशीर इशारा/सार्वजनिक उद्घोषणा देऊन जमावाला पांगण्याची संधी द्या', c:true},
+         {t:'फक्त बघ्या लोकांनाच आधी अटक करा', c:false},
+         {t:'जमावाला वेळ न देता त्वरित कारवाई सुरू करा', c:false}],
+       exp:'बेकायदेशीर जमाव पांगवण्यापूर्वी स्पष्ट इशारा/उद्घोषणा देणे बंधनकारक आहे — विनाइशारा बळाचा वापर कायदेशीरदृष्ट्या आव्हानीय ठरू शकतो.'},
+      {diff:'med', q:'दगडफेकीत काही पोलीस कर्मचारी जखमी होतात. पुढील रणनीती काय?',
+       opts:[
+         {t:'जमावावर बेछूट व अनियंत्रित गोळीबार करा', c:false},
+         {t:'वरिष्ठांना कळवून अतिरिक्त कुमक मागवा व प्रमाणबद्ध, टप्प्याटप्प्याने बळाचा वापर करा', c:true},
+         {t:'जखमी कर्मचाऱ्यांकडे दुर्लक्ष करून मोहीम तशीच सुरू ठेवा', c:false},
+         {t:'बंदोबस्त पूर्णपणे सोडून माघार घ्या', c:false}],
+       exp:'वाढत्या परिस्थितीत अतिरिक्त कुमक मागवणे व प्रमाणबद्ध बळाचा टप्प्याटप्प्याने वापर आवश्यक आहे — अतिरेक व पूर्ण दुर्लक्ष दोन्ही धोकादायक आहेत.'},
+      {diff:'hard', q:'जमावातील काही जण मीडिया कॅमेऱ्यासमोर पोलिसांवर चुकीचे आरोप करत आहेत. काय कराल?',
+       opts:[
+         {t:'मीडियाशी स्वतः जागच्याजागी वाद घालत बसा', c:false},
+         {t:'कारवाईवर लक्ष केंद्रित करा; अधिकृत माहिती फक्त नियुक्त प्रवक्ता/वरिष्ठ अधिकाऱ्यामार्फतच द्यावी', c:true},
+         {t:'मीडिया प्रतिनिधींना जबरदस्तीने घटनास्थळावरून दूर करा', c:false},
+         {t:'आरोपांकडे पूर्ण दुर्लक्ष करून कोणतीही अधिकृत प्रतिक्रिया न देणे', c:false}],
+       exp:'घटनास्थळावरील अधिकाऱ्याने कारवाईवर लक्ष केंद्रित करावे; अधिकृत माहिती ठराविक व अधिकृत माध्यमातूनच दिल्याने गोंधळ व चुकीची विधाने टाळता येतात.'},
+      {diff:'hard', q:'परिस्थिती नियंत्रणात आल्यावर पुढील कायदेशीर कार्यवाही काय?',
+       opts:[
+         {t:'कोणतीही नोंद न करता बंदोबस्त संपल्याचे जाहीर करा', c:false},
+         {t:'भडकावणाऱ्या व नुकसान करणाऱ्या व्यक्तींविरुद्ध पुराव्यांसह गुन्हे नोंदवा, तसेच बळाच्या वापराचा अहवाल विहित पद्धतीने सादर करा', c:true},
+         {t:'फक्त एकाच बाजूच्या व्यक्तींवर गुन्हे नोंदवा', c:false},
+         {t:'मालमत्ता नुकसानीची नोंद घेण्याची गरज नाही', c:false}],
+       exp:'निष्पक्षपणे व पुराव्यांच्या आधारे गुन्हे नोंदवणे आणि बळाच्या वापराचा तपशीलवार अहवाल सादर करणे ही जबाबदार पोलिसिंगची अनिवार्य बाब आहे.'}
+    ]
+  },
+  {
+    id:'narcotics', icon:'💊', tab:'फाईल क्र. ०९', title:'अंमली पदार्थ तस्करी', type:'NDPS अंतर्गत गुन्हा',
+    desc:'गुप्त माहितीच्या आधारे अंमली पदार्थांच्या मोठ्या खेपेचा संशय.',
+    brief:'गुप्त माहितीच्या आधारे एका ठिकाणी अंमली पदार्थांची मोठी खेप असल्याचा संशय आहे. पथकाला तात्काळ छापा टाकण्याचे आदेश मिळतात. या प्रकरणात प्रत्येक कायदेशीर टप्पा काटेकोरपणे पाळणे आवश्यक आहे — अन्यथा भक्कम पुरावाही न्यायालयात टिकत नाही.',
+    steps:[
+      {diff:'easy', q:'छापा टाकण्यापूर्वी कोणती कायदेशीर प्रक्रिया पूर्ण कराल?',
+       opts:[
+         {t:'थेट छापा टाका, कोणत्याही कागदपत्रांची गरज नाही', c:false},
+         {t:'NDPS कायद्यानुसार आवश्यक ती परवानगी/वॉरंट व पंच साक्षीदार आधीच तयार ठेवा', c:true},
+         {t:'फक्त तोंडी आदेशावर कारवाई करा', c:false},
+         {t:'माहिती देणाऱ्या स्रोताचे नाव जाहीर करा', c:false}],
+       exp:'NDPS कायद्यांतर्गत तपासणी/जप्तीसाठी विहित कायदेशीर प्रक्रिया व पंच साक्षीदार बंधनकारक आहेत — अन्यथा जप्ती न्यायालयात आव्हानीय ठरते.'},
+      {diff:'easy', q:'जप्त केलेला संशयित मुद्देमाल कसा हाताळाल?',
+       opts:[
+         {t:'स्वतःच्या ताब्यात ठेवून नंतर सवडीने सादर करा', c:false},
+         {t:'पंचांसमोर वजन करून सीलबंद करा व नमुना प्रयोगशाळा तपासणीसाठी पाठवा', c:true},
+         {t:'मुद्देमाल जागीच नष्ट करा', c:false},
+         {t:'वजन न करताच थेट ठाण्यात नेऊन ठेवा', c:false}],
+       exp:'NDPS प्रकरणांत मुद्देमालाचे वजन, सीलिंग व प्रयोगशाळा नमुना विश्लेषण ही प्रक्रिया काटेकोरपणे पाळणे पुराव्याच्या विश्वासार्हतेसाठी अत्यावश्यक आहे.'},
+      {diff:'med', q:'छाप्यात सापडलेली व्यक्ती "हे माझे नाही, कोणीतरी इथे ठेवले" असे सांगते. काय कराल?',
+       opts:[
+         {t:'दाव्यावर विश्वास ठेवून तिला लगेच सोडून द्या', c:false},
+         {t:'दाव्याची नोंद घेऊन जागेचा ताबा, मालकी हक्क व इतर पुराव्यांच्या आधारे निष्पक्ष चौकशी करा', c:true},
+         {t:'दावा पूर्णपणे दुर्लक्षित करून थेट अटक करा', c:false},
+         {t:'दावा खरा मानून संपूर्ण प्रकरण रद्द करा', c:false}],
+       exp:'आरोपीचा दावा नोंदवून घेणे आवश्यक आहे, पण जागेचा ताबा व इतर संदर्भ पुराव्यांच्या आधारेच पुढील निर्णय घ्यावा — केवळ दाव्यावर विसंबून राहणे किंवा तो पूर्ण दुर्लक्षित करणे दोन्ही चुकीचे.'},
+      {diff:'hard', q:'जप्त पदार्थाचे प्रमाण सीमारेषेवर आहे — "व्यावसायिक प्रमाण" की "लहान प्रमाण" हे अद्याप निश्चित नाही. काय कराल?',
+       opts:[
+         {t:'स्वतःच्या अंदाजाने कलम ठरवून आरोपपत्र दाखल करा', c:false},
+         {t:'प्रयोगशाळेच्या अचूक विश्लेषण अहवालानंतरच योग्य कलमांखाली पुढील कारवाई निश्चित करा', c:true},
+         {t:'प्रमाण महत्त्वाचे नाही असे समजून पुढे जा', c:false},
+         {t:'नेहमी जास्तीत जास्त कठोर कलम आपोआप लावा', c:false}],
+       exp:'NDPS कायद्यात जप्त प्रमाणानुसार शिक्षेची तीव्रता बदलते — प्रयोगशाळा अहवालाशिवाय अचूक कलम ठरवणे चुकीचे व आरोपपत्र कमकुवत करणारे ठरते.'},
+      {diff:'hard', q:'तपासात एक अल्पवयीन मुलगा "वाहक" (carrier) म्हणून वापरला गेल्याचे उघड होते. काय कराल?',
+       opts:[
+         {t:'अल्पवयीन असूनही प्रौढांप्रमाणेच कठोर कारवाई करा', c:false},
+         {t:'अल्पवयीनाला Juvenile Justice Act नुसार वेगळी संरक्षणात्मक वागणूक देत, त्याला वापरणाऱ्या प्रौढ सूत्रधारांचा शोध घेऊन त्यांच्यावर कठोर कारवाई करा', c:true},
+         {t:'अल्पवयीन आहे म्हणून संपूर्ण प्रकरण दुर्लक्षित करा', c:false},
+         {t:'मुलालाच मुख्य आरोपी ठरवून कारवाई करा', c:false}],
+       exp:'अंमली पदार्थ तस्करीत अल्पवयीनांचा वापर हे संघटित गुन्ह्याचे गंभीर लक्षण आहे — मुलाला संरक्षण देत खऱ्या सूत्रधारांपर्यंत पोहोचणे आवश्यक आहे.'}
     ]
   }
 ];
 
 /* ---------------- STATE ---------------- */
-let currentCase=null, stepIdx=0, correctCount=0, totalScore=0, locked=false, shuffledOpts=[];
+const DIFF_POINTS = {easy:{correct:5,wrong:-2}, med:{correct:10,wrong:-4}, hard:{correct:15,wrong:-6}};
+let currentCase=null, stepIdx=0, correctCount=0, totalScore=0, locked=false, shuffledOpts=[], pickedSet=new Set(), stepRecap=[];
 
 const screenRegister=document.getElementById('screenRegister');
 const screenHome=document.getElementById('screenHome');
+const screenBrief=document.getElementById('screenBrief');
 const screenSim=document.getElementById('screenSim');
 const screenEnd=document.getElementById('screenEnd');
 const folderGrid=document.getElementById('folderGrid');
@@ -870,7 +829,7 @@ function renderFolders(){
     const el=document.createElement('div');
     el.className='folder';
     el.innerHTML=`
-      <div class="tab-label">${c.fileNo}</div>
+      <div class="tab-label">${c.tab}</div>
       <div class="ficon">${c.icon}</div>
       <h3>${c.title}</h3>
       <p>${c.desc}</p>
@@ -879,20 +838,34 @@ function renderFolders(){
         <span class="diff-dot diff-med">मध्यम ×${dc.med}</span>
         <span class="diff-dot diff-hard">कठीण ×${dc.hard}</span>
       </div>
-      <div class="q-count">एकूण प्रश्न: ${c.steps.length}</div>
       <div class="go">सिम्युलेशन सुरू करा →</div>
     `;
-    el.addEventListener('click',()=>startCase(c));
+    el.addEventListener('click',()=>openBrief(c));
     folderGrid.appendChild(el);
   });
 }
 renderFolders();
 
 function showScreen(name){
-  [screenRegister,screenHome,screenSim,screenEnd].forEach(s=>s.classList.remove('active'));
+  [screenRegister,screenHome,screenBrief,screenSim,screenEnd].forEach(s=>s.classList.remove('active'));
   name.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+function maxScoreOf(c){
+  return c.steps.reduce((sum,s)=>sum+DIFF_POINTS[s.diff].correct,0);
+}
+
+function openBrief(c){
+  currentCase=c;
+  document.getElementById('briefCaseNo').textContent = 'गु.र.नं. २०२६/'+String(Math.floor(Math.random()*89)+10);
+  document.getElementById('briefCaseType').textContent = 'प्रकार: '+c.type;
+  document.getElementById('briefTitle').textContent = c.title;
+  document.getElementById('briefText').textContent = c.brief || c.desc;
+  showScreen(screenBrief);
+}
+document.getElementById('briefBackBtn').addEventListener('click',()=>showScreen(screenHome));
+document.getElementById('briefStartBtn').addEventListener('click',()=>startCase(currentCase));
 
 function shuffle(arr){
   const a=arr.slice();
@@ -904,17 +877,17 @@ function shuffle(arr){
 }
 
 function startCase(c){
-  currentCase=c; stepIdx=0; correctCount=0; locked=false;
-  document.getElementById('fileNoTag').innerHTML = '<b>'+c.fileNo+'</b>';
-  document.getElementById('caseNo').textContent = 'गु.र.नं. २०२६/'+String(Math.floor(Math.random()*89)+10);
+  currentCase=c; stepIdx=0; correctCount=0; totalScore=0; locked=false; stepRecap=[];
+  document.getElementById('caseNo').textContent = document.getElementById('briefCaseNo').textContent;
   document.getElementById('caseType').textContent = 'प्रकार: '+c.type;
   document.getElementById('casePolice').textContent = 'ठाणे: '+ (officer.station||'—');
+  document.getElementById('officerLine').textContent = 'बॅज: '+officer.badge+' | गुण: 0';
   renderStep();
   showScreen(screenSim);
 }
 
 function renderStep(){
-  locked=false;
+  locked=false; pickedSet=new Set();
   const step=currentCase.steps[stepIdx];
   document.getElementById('progLabel').textContent = `पायरी ${stepIdx+1}/${currentCase.steps.length}`;
   document.getElementById('progFill').style.width = ((stepIdx)/currentCase.steps.length*100)+'%';
@@ -927,49 +900,80 @@ function renderStep(){
 
   const box=document.getElementById('optionsBox');
   box.innerHTML='';
-  const letters=['अ','ब','क','ड'];
   shuffledOpts.forEach((opt,i)=>{
     const b=document.createElement('button');
     b.className='opt';
-    b.innerHTML=`<span>${opt.t}</span><span class="oletter">${letters[i]}</span>`;
-    b.addEventListener('click',()=>selectOption(i,b));
+    b.innerHTML=`<span>${opt.t}</span><span class="ocheck"></span>`;
+    b.addEventListener('click',()=>toggleOption(i,b));
     box.appendChild(b);
   });
   document.getElementById('feedbackBox').classList.remove('show','ok','bad');
-  document.getElementById('nextBtn').disabled=true;
+  document.getElementById('fbPoints').textContent='';
+  document.getElementById('submitBtn').style.display='inline-block';
+  document.getElementById('submitBtn').disabled=true;
+  document.getElementById('nextBtn').style.display='none';
   document.getElementById('nextBtn').textContent = (stepIdx===currentCase.steps.length-1) ? 'निकाल पहा →' : 'पुढील पायरी →';
 }
 
-function selectOption(i,btnEl){
+function toggleOption(i,btnEl){
   if(locked) return;
+  if(pickedSet.has(i)){ pickedSet.delete(i); btnEl.classList.remove('picked'); }
+  else { pickedSet.add(i); btnEl.classList.add('picked'); }
+  document.getElementById('submitBtn').disabled = pickedSet.size===0;
+}
+
+document.getElementById('submitBtn').addEventListener('click', submitStep);
+
+function submitStep(){
+  if(locked) return;
+  if(pickedSet.size===0) return;
   locked=true;
   const step=currentCase.steps[stepIdx];
-  const correctIdx = shuffledOpts.findIndex(o=>o.c);
+  const pts=DIFF_POINTS[step.diff];
   const allBtns=[...document.getElementById('optionsBox').children];
-  allBtns.forEach((b,idx)=>{
+  let stepPts=0, anyWrongPicked=false, allCorrectPicked=true;
+
+  shuffledOpts.forEach((opt,idx)=>{
+    const b=allBtns[idx];
     b.classList.add('locked');
-    if(idx===correctIdx) b.classList.add('correct');
-    if(idx!==correctIdx) b.classList.add('dim');
+    const wasPicked = pickedSet.has(idx);
+    if(wasPicked && opt.c){
+      b.classList.add('correct');
+      stepPts += pts.correct;
+      const s=document.createElement('span'); s.className='opt-pts'; s.textContent='+'+pts.correct; b.appendChild(s);
+    } else if(wasPicked && !opt.c){
+      b.classList.add('wrong'); anyWrongPicked=true;
+      stepPts += pts.wrong;
+      const s=document.createElement('span'); s.className='opt-pts'; s.textContent=pts.wrong; b.appendChild(s);
+    } else if(!wasPicked && opt.c){
+      b.classList.add('missed'); allCorrectPicked=false;
+    } else {
+      b.classList.add('dim');
+    }
   });
+
+  totalScore += stepPts;
+  correctCount += (stepPts>0 && !anyWrongPicked && allCorrectPicked) ? 1 : 0;
+  stepRecap.push({diff:step.diff, q:step.q, pts:stepPts, max:pts.correct});
+
   const fb=document.getElementById('feedbackBox');
   const fbHead=document.getElementById('fbHead');
   const fbBody=document.getElementById('fbBody');
-  if(i===correctIdx){
-    correctCount++;
-    const pts = step.diff==='hard'?15:(step.diff==='med'?10:5);
-    totalScore+=pts;
-    btnEl.classList.remove('dim');
+  const fbPoints=document.getElementById('fbPoints');
+  if(!anyWrongPicked && allCorrectPicked){
     fb.classList.add('show','ok');
     fbHead.className='fb-head ok-c';
     fbHead.innerHTML='<span class="stamp">योग्य कार्यवाही</span>';
   } else {
-    btnEl.classList.add('wrong'); btnEl.classList.remove('dim');
     fb.classList.add('show','bad');
     fbHead.className='fb-head bad-c';
     fbHead.innerHTML='<span class="stamp">पुन्हा अभ्यास करा</span>';
   }
   fbBody.textContent = step.exp;
-  document.getElementById('nextBtn').disabled=false;
+  fbPoints.textContent = 'या पायरीचे गुण: ' + (stepPts>=0?'+':'') + stepPts + ' / ' + pts.correct;
+
+  document.getElementById('submitBtn').style.display='none';
+  document.getElementById('nextBtn').style.display='inline-block';
   document.getElementById('officerLine').textContent = 'बॅज: '+officer.badge+' | गुण: '+totalScore;
   document.getElementById('footerScore').textContent=totalScore;
 }
@@ -988,12 +992,13 @@ document.getElementById('backHomeBtn').addEventListener('click',()=>showScreen(s
 function finishCase(){
   document.getElementById('progFill').style.width='100%';
   const total=currentCase.steps.length;
-  document.getElementById('endScore').textContent = correctCount+' / '+total;
-  document.getElementById('endCaseName').textContent = `${currentCase.fileNo} — "${currentCase.title}" प्रकरणातील बरोबर उत्तरे · एकूण गुण: ${totalScore}`;
+  const maxScore=maxScoreOf(currentCase);
+  document.getElementById('endScore').textContent = totalScore+' / '+maxScore;
+  document.getElementById('endCaseName').textContent = `"${currentCase.title}" प्रकरण  ·  बरोबर पायऱ्या: ${correctCount}/${total}`;
   const recap=document.getElementById('recapBox');
-  recap.innerHTML = currentCase.steps.map((s,idx)=>{
-    const correctOpt = s.opts.find(o=>o.c);
-    return `<div>${idx+1}. [${DIFF_LABEL[s.diff]}] <b>${correctOpt.t}</b></div>`;
+  recap.innerHTML = stepRecap.map((s,idx)=>{
+    const sign = s.pts>=0 ? '+'+s.pts : s.pts;
+    return `<div>${idx+1}. [${DIFF_LABEL[s.diff]}] गुण: <b>${sign} / ${s.max}</b></div>`;
   }).join('');
   showScreen(screenEnd);
 }
@@ -1003,3 +1008,4 @@ document.getElementById('anotherBtn').addEventListener('click',()=>showScreen(sc
 </script>
 </body>
 </html>
+
